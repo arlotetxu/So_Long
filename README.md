@@ -1,2 +1,2 @@
 # So_Long
-Pequeño juego en 2D diseñado para trabajar con texturas, sprites y algunos otros elementos básicos de jugabilidad.
+Little 2D game designed to work with textures, sprites and some other basic game elements
