@@ -17,13 +17,27 @@ int main(void) {
 	void *mlx_ptr;
 	void *mlx_win;
 	t_image	img;
+	int 	_x = 4;
+	int 	_y = 150;
 
 	mlx_ptr = mlx_init();
 	mlx_win = mlx_new_window(mlx_ptr, width, height, "JMF NEW WINDOW");
 	img.img = mlx_new_image(mlx_ptr, width, height);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel,
 								  &img.line_length, &img.endian);
-	my_mlx_pixel_put(&img, 5, 5, 0x00FF0000);
+	while (_x < _y)
+	{
+		my_mlx_pixel_put(&img, _x, 4, 0x00FF0000);
+		my_mlx_pixel_put(&img, 4, _x, 0x00FF0000);
+		_x++;
+	}
+	_x = 4;
+	while (_y > _x)
+	{
+		my_mlx_pixel_put(&img, 150, _y, 0x00FF0000);
+		my_mlx_pixel_put(&img, _y, 150, 0x00FF0000);
+		_y--;
+	}
 	mlx_put_image_to_window(mlx_ptr, mlx_win, img.img, 0, 0);
 	mlx_loop(mlx_ptr);
 	//free(mlx_ptr);

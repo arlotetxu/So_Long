@@ -101,7 +101,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/main.c",
+			"path" : "src/testing.c",
 			"sourceGroupIndex" : 0
 		},
 		{
