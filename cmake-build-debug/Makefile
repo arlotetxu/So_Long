@@ -129,29 +129,77 @@ so_long/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/build
 .PHONY : so_long/fast
 
-src/testing.o: src/testing.c.o
-.PHONY : src/testing.o
+Get_Next_line/get_next_line.o: Get_Next_line/get_next_line.c.o
+.PHONY : Get_Next_line/get_next_line.o
 
 # target to build an object file
-src/testing.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/testing.c.o
-.PHONY : src/testing.c.o
+Get_Next_line/get_next_line.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/Get_Next_line/get_next_line.c.o
+.PHONY : Get_Next_line/get_next_line.c.o
 
-src/testing.i: src/testing.c.i
-.PHONY : src/testing.i
+Get_Next_line/get_next_line.i: Get_Next_line/get_next_line.c.i
+.PHONY : Get_Next_line/get_next_line.i
 
 # target to preprocess a source file
-src/testing.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/testing.c.i
-.PHONY : src/testing.c.i
+Get_Next_line/get_next_line.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/Get_Next_line/get_next_line.c.i
+.PHONY : Get_Next_line/get_next_line.c.i
 
-src/testing.s: src/testing.c.s
-.PHONY : src/testing.s
+Get_Next_line/get_next_line.s: Get_Next_line/get_next_line.c.s
+.PHONY : Get_Next_line/get_next_line.s
 
 # target to generate assembly for a file
-src/testing.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/testing.c.s
-.PHONY : src/testing.c.s
+Get_Next_line/get_next_line.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/Get_Next_line/get_next_line.c.s
+.PHONY : Get_Next_line/get_next_line.c.s
+
+src/sl_checks_util.o: src/sl_checks_util.c.o
+.PHONY : src/sl_checks_util.o
+
+# target to build an object file
+src/sl_checks_util.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/sl_checks_util.c.o
+.PHONY : src/sl_checks_util.c.o
+
+src/sl_checks_util.i: src/sl_checks_util.c.i
+.PHONY : src/sl_checks_util.i
+
+# target to preprocess a source file
+src/sl_checks_util.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/sl_checks_util.c.i
+.PHONY : src/sl_checks_util.c.i
+
+src/sl_checks_util.s: src/sl_checks_util.c.s
+.PHONY : src/sl_checks_util.s
+
+# target to generate assembly for a file
+src/sl_checks_util.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/sl_checks_util.c.s
+.PHONY : src/sl_checks_util.c.s
+
+src/so_long.o: src/so_long.c.o
+.PHONY : src/so_long.o
+
+# target to build an object file
+src/so_long.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/so_long.c.o
+.PHONY : src/so_long.c.o
+
+src/so_long.i: src/so_long.c.i
+.PHONY : src/so_long.i
+
+# target to preprocess a source file
+src/so_long.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/so_long.c.i
+.PHONY : src/so_long.c.i
+
+src/so_long.s: src/so_long.c.s
+.PHONY : src/so_long.s
+
+# target to generate assembly for a file
+src/so_long.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/so_long.c.s
+.PHONY : src/so_long.c.s
 
 # Help Target
 help:
@@ -162,9 +210,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... so_long"
-	@echo "... src/testing.o"
-	@echo "... src/testing.i"
-	@echo "... src/testing.s"
+	@echo "... Get_Next_line/get_next_line.o"
+	@echo "... Get_Next_line/get_next_line.i"
+	@echo "... Get_Next_line/get_next_line.s"
+	@echo "... src/sl_checks_util.o"
+	@echo "... src/sl_checks_util.i"
+	@echo "... src/sl_checks_util.s"
+	@echo "... src/so_long.o"
+	@echo "... src/so_long.i"
+	@echo "... src/so_long.s"
 .PHONY : help
 
 

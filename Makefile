@@ -39,7 +39,7 @@ OBJF = obj
 INC = inc
 
 # Files
-SRC_FILES = testing
+SRC_FILES = so_long sl_checks_util
 SRCS = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
@@ -52,6 +52,7 @@ MLX			=	-Lmlx -lmlx -framework OpenGL -framework AppKit
 #SRC 		=	main.c
 
 LIBFT_a 	= 	libft/libft.a
+GNL_a		=	Get_Next_line/ft_gnl.a
 MLX_a		=	mlx/libmlx.a
 
 #OBJS 		= 	$(SRC:.c=.o)
@@ -75,8 +76,9 @@ all: $(NAME)
 # Compiling all
 $(NAME): $(OBJS)
 	@$(MAKE) -C ./libft
+	@$(MAKE) -C ./Get_Next_line
 	@$(MAKE) -C ./mlx
-	@$(CC) $(CFLAGS) $(OBJS) -I $(INC) $(LIBFT_a) $(MLX_a) $(MLX) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) -I $(INC) $(LIBFT_a) $(GNL_a) $(MLX_a) $(MLX) -o $(NAME)
 	@echo "$(GREEN)$$HEADER$(DEF_COLOR)"
 	@echo "$(GREEN)So_Long compiled!$(DEF_COLOR)"
 
@@ -93,6 +95,7 @@ $(OBJF):
 clean:
 	$(RM) $(OBJS)
 	@make clean -C ./libft
+	@make clean -C ./Get_Next_line
 	@make clean -C ./mlx
 	@echo "$(YELLOW)&(OBJS) --> Files removed.$(DEF_COLOR)"
 
@@ -100,6 +103,7 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 	@MAKE fclean -C ./libft
+	@MAKE fclean -C ./Get_Next_line
 	#@MAKE fclean -C ./mlx
 	@echo "$(RED)$(NAME) Executable files removed!$(DEF_COLOR)"
 

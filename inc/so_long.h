@@ -7,7 +7,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <fcntl.h>
 #include "../mlx/mlx.h"
+#include "../Get_Next_line/get_next_line.h"
 
 
 typedef struct	s_image {
@@ -16,8 +18,11 @@ typedef struct	s_image {
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
+	int 	width_im;
+	int 	height_im;
 }				t_image;
 //put your functions here
-void	my_mlx_pixel_put(t_image *data, int x, int y, int color);
+//CHECKS
+char	**ft_map_2_array(void);
 
 #endif //SO_LONG_H

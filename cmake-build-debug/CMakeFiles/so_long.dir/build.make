@@ -69,31 +69,63 @@ include CMakeFiles/so_long.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/so_long.dir/flags.make
 
-CMakeFiles/so_long.dir/src/testing.c.o: CMakeFiles/so_long.dir/flags.make
-CMakeFiles/so_long.dir/src/testing.c.o: /Users/jflorido/Documents/42_Cursus/So_Long/src/testing.c
-CMakeFiles/so_long.dir/src/testing.c.o: CMakeFiles/so_long.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jflorido/Documents/42_Cursus/So_Long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/so_long.dir/src/testing.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long.dir/src/testing.c.o -MF CMakeFiles/so_long.dir/src/testing.c.o.d -o CMakeFiles/so_long.dir/src/testing.c.o -c /Users/jflorido/Documents/42_Cursus/So_Long/src/testing.c
+CMakeFiles/so_long.dir/src/so_long.c.o: CMakeFiles/so_long.dir/flags.make
+CMakeFiles/so_long.dir/src/so_long.c.o: /Users/jflorido/Documents/42_Cursus/So_Long/src/so_long.c
+CMakeFiles/so_long.dir/src/so_long.c.o: CMakeFiles/so_long.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jflorido/Documents/42_Cursus/So_Long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/so_long.dir/src/so_long.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long.dir/src/so_long.c.o -MF CMakeFiles/so_long.dir/src/so_long.c.o.d -o CMakeFiles/so_long.dir/src/so_long.c.o -c /Users/jflorido/Documents/42_Cursus/So_Long/src/so_long.c
 
-CMakeFiles/so_long.dir/src/testing.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long.dir/src/testing.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/jflorido/Documents/42_Cursus/So_Long/src/testing.c > CMakeFiles/so_long.dir/src/testing.c.i
+CMakeFiles/so_long.dir/src/so_long.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long.dir/src/so_long.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/jflorido/Documents/42_Cursus/So_Long/src/so_long.c > CMakeFiles/so_long.dir/src/so_long.c.i
 
-CMakeFiles/so_long.dir/src/testing.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long.dir/src/testing.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/jflorido/Documents/42_Cursus/So_Long/src/testing.c -o CMakeFiles/so_long.dir/src/testing.c.s
+CMakeFiles/so_long.dir/src/so_long.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long.dir/src/so_long.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/jflorido/Documents/42_Cursus/So_Long/src/so_long.c -o CMakeFiles/so_long.dir/src/so_long.c.s
+
+CMakeFiles/so_long.dir/Get_Next_line/get_next_line.c.o: CMakeFiles/so_long.dir/flags.make
+CMakeFiles/so_long.dir/Get_Next_line/get_next_line.c.o: /Users/jflorido/Documents/42_Cursus/So_Long/Get_Next_line/get_next_line.c
+CMakeFiles/so_long.dir/Get_Next_line/get_next_line.c.o: CMakeFiles/so_long.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jflorido/Documents/42_Cursus/So_Long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/so_long.dir/Get_Next_line/get_next_line.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long.dir/Get_Next_line/get_next_line.c.o -MF CMakeFiles/so_long.dir/Get_Next_line/get_next_line.c.o.d -o CMakeFiles/so_long.dir/Get_Next_line/get_next_line.c.o -c /Users/jflorido/Documents/42_Cursus/So_Long/Get_Next_line/get_next_line.c
+
+CMakeFiles/so_long.dir/Get_Next_line/get_next_line.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long.dir/Get_Next_line/get_next_line.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/jflorido/Documents/42_Cursus/So_Long/Get_Next_line/get_next_line.c > CMakeFiles/so_long.dir/Get_Next_line/get_next_line.c.i
+
+CMakeFiles/so_long.dir/Get_Next_line/get_next_line.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long.dir/Get_Next_line/get_next_line.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/jflorido/Documents/42_Cursus/So_Long/Get_Next_line/get_next_line.c -o CMakeFiles/so_long.dir/Get_Next_line/get_next_line.c.s
+
+CMakeFiles/so_long.dir/src/sl_checks_util.c.o: CMakeFiles/so_long.dir/flags.make
+CMakeFiles/so_long.dir/src/sl_checks_util.c.o: /Users/jflorido/Documents/42_Cursus/So_Long/src/sl_checks_util.c
+CMakeFiles/so_long.dir/src/sl_checks_util.c.o: CMakeFiles/so_long.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jflorido/Documents/42_Cursus/So_Long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/so_long.dir/src/sl_checks_util.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long.dir/src/sl_checks_util.c.o -MF CMakeFiles/so_long.dir/src/sl_checks_util.c.o.d -o CMakeFiles/so_long.dir/src/sl_checks_util.c.o -c /Users/jflorido/Documents/42_Cursus/So_Long/src/sl_checks_util.c
+
+CMakeFiles/so_long.dir/src/sl_checks_util.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long.dir/src/sl_checks_util.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/jflorido/Documents/42_Cursus/So_Long/src/sl_checks_util.c > CMakeFiles/so_long.dir/src/sl_checks_util.c.i
+
+CMakeFiles/so_long.dir/src/sl_checks_util.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long.dir/src/sl_checks_util.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/jflorido/Documents/42_Cursus/So_Long/src/sl_checks_util.c -o CMakeFiles/so_long.dir/src/sl_checks_util.c.s
 
 # Object files for target so_long
 so_long_OBJECTS = \
-"CMakeFiles/so_long.dir/src/testing.c.o"
+"CMakeFiles/so_long.dir/src/so_long.c.o" \
+"CMakeFiles/so_long.dir/Get_Next_line/get_next_line.c.o" \
+"CMakeFiles/so_long.dir/src/sl_checks_util.c.o"
 
 # External object files for target so_long
 so_long_EXTERNAL_OBJECTS =
 
-so_long: CMakeFiles/so_long.dir/src/testing.c.o
+so_long: CMakeFiles/so_long.dir/src/so_long.c.o
+so_long: CMakeFiles/so_long.dir/Get_Next_line/get_next_line.c.o
+so_long: CMakeFiles/so_long.dir/src/sl_checks_util.c.o
 so_long: CMakeFiles/so_long.dir/build.make
 so_long: CMakeFiles/so_long.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/jflorido/Documents/42_Cursus/So_Long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable so_long"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/jflorido/Documents/42_Cursus/So_Long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable so_long"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/so_long.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
