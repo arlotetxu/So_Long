@@ -39,7 +39,7 @@ OBJF = obj
 INC = inc
 
 # Files
-SRC_FILES = so_long sl_checks_util
+SRC_FILES = so_long sl_checks_util sl_exit
 SRCS = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
