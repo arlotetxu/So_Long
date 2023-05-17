@@ -80,7 +80,7 @@ int	ft_check_maps_rectangle(char **map)
 			columns++;
 		//printf("Fila %d - Columnas: %d\n", rows, columns);
 		if (columns != col_base)
-			return (0);
+			return (perror("Error.\nThe map is not a rectangle"), 0);
 		rows++;
 	}
 	if (columns > rows)
@@ -123,7 +123,7 @@ int	ft_check_map_leaks(char **map)
 		if (map[0][i] != '1' || map[lines][i] != '1')
 		{
 			//ft_error_exit();
-			return (write (2, "Error\n", 6), 0);
+			return (perror("Error.\nThe map is not closed"), 0);
 		}
 		i++;
 	}
@@ -133,7 +133,7 @@ int	ft_check_map_leaks(char **map)
 		if (map[i][0] != '1' || map[i][chars - 1] != '1')
 		{
 			//ft_error_exit();
-			return (write (2, "Error\n", 6), 0);
+			return (perror("Error.\nThe map is not closed"), 0);
 		}
 		i++;
 		//printf("Lines: %d\n", lines);
