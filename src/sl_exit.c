@@ -23,3 +23,11 @@ void	ft_exiting(char **str)
 	free(str);
 	//printf("Exit (free) completado!!\n");
 }
+
+/*
+ * EXITING WHEN ERROR
+ */
+void	ft_error_exit(void)
+{
+	write(2, "Error\n", 6);
+}

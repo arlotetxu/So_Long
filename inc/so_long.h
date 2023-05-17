@@ -30,9 +30,11 @@ typedef struct	s_image {
 //CHECKS
 char	**ft_map_2_array(char *map_route);
 int		ft_check_maps_rectangle(char **map);
+int		ft_check_map_leaks(char **str);
 
 
 //EXIT
 void	ft_exiting(char **str);
+void	ft_error_exit(void);
 
 #endif //SO_LONG_H

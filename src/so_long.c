@@ -14,19 +14,21 @@
  * 			representar y el numero de veces que mostramos esa imagen
  * 		# El mapa ("maps/map_0.ber") se carga en un char **
  * 			sl_checks_util.c -> char	**ft_map_2_array(char *map_route)
- * 		# Comprobamos si el mapa dado es un triangulo
+ * 		# Comprobamos si el mapa dado es un rectangulo
  * 			sl_checks_util.c -> int	ft_check_maps_rectangle(char **map)
+ * 		#Comprobamos si el mapa dado esta cerrado
+ * 			sl_checks_util.c -> int	ft_check_map_leaks(char **map)
  * 		# Creada funcion para hacer los frees de array bidimensionales
  * 			sl_exit.c -> void	ft_exiting(char **str)
+ * 		# Creada funcion para imprimir "Error" en caso de error
+ * 			sl_exit.c -> void	ft_error_exit(void)
  *
  *
  * -- PROXIMO --
  *
  *		# Comenzar con los chequeos (ver notion)
- *			- Es rectangular? Numero de columnas > numero de filas --> HECHO.
  *			- Tiene algun caracter que no debe o duplicados inicio(P) o salida(E)?
  *			- Tiene solucion (FloodFill)
- *			- Esta cerrado? Su perimetro son 1?
  *
  */
 
@@ -63,7 +65,8 @@ int main(int argc, char **argv)
 	{
 		map_array = ft_map_2_array(argv[1]);
 		//METER LOS CONDICIONALES PARA EJECUCION DE LOS CHEQUEOS
-		if (ft_check_maps_rectangle(map_array) == 0)
+		if (ft_check_maps_rectangle(map_array) == 0 ||
+			ft_check_map_leaks(map_array) == 0)
 		{
 			ft_exiting(map_array);
 			return (0);

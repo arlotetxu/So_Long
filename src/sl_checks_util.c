@@ -87,3 +87,57 @@ int	ft_check_maps_rectangle(char **map)
 		return (1);
 	return (0);
 }
+
+/*
+ * #FT_CHECK_MAP_LEAKS
+ * 		checks if the given map is has 1 on all its perimeter.
+ * 		If the functions discover a character not equal to 1, it
+ * 		returns 0. Otherwise, it returns 1;
+ *
+ * #PARAMETERS
+ * 		- char **map --> Is the .ber file converted to a char array.
+ *
+ * #RETURN
+ * 		- 0 if the .ber has leaks on its perimeter.
+ * 		- 1 if the .ber has no leaks.
+ */
+
+int	ft_check_map_leaks(char **map)
+{
+	int lines = 0;
+	int chars = 0;
+	int i = 0;
+
+	while (map[lines])
+	{
+		chars = 0;
+		while (map[lines][chars])
+			chars++;
+		lines++;
+	}
+	lines--;
+	chars--;
+	i = 0;
+	while (i < chars)
+	{
+		if (map[0][i] != '1' || map[lines][i] != '1')
+		{
+			//ft_error_exit();
+			return (write (2, "Error\n", 6), 0);
+		}
+		i++;
+	}
+	i = 0;
+	while (i < lines)
+	{
+		if (map[i][0] != '1' || map[i][chars - 1] != '1')
+		{
+			//ft_error_exit();
+			return (write (2, "Error\n", 6), 0);
+		}
+		i++;
+		//printf("Lines: %d\n", lines);
+	}
+	//printf("Llego al final\n");
+	return (1);
+}
