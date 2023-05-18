@@ -22,12 +22,15 @@
  * 			sl_exit.c -> void	ft_exiting(char **str)
  * 		# Creada funcion para imprimir "Error" en caso de error
  * 			sl_exit.c -> void	ft_error_exit(void)
+ * 		# Creada funcion para comprobar la cantidad de elementos std
+ * 			sl_checks_util.c -> int	ft_check_std_elements(char **map)
  *
  *
  * -- PROXIMO --
  *
  *		# Comenzar con los chequeos (ver notion)
  *			- Tiene algun caracter que no debe o duplicados inicio(P) o salida(E)?
+ *			- Hay caracteres no permitidos / reconocibles?
  *			- Tiene solucion (FloodFill)
  *
  */
@@ -41,8 +44,7 @@ void	ft_so_long(void)
 	//char	**test = NULL;
 
 	mlx_ptr = mlx_init();
-	mlx_win = mlx_new_window(mlx_ptr, width, height, "JMF NEW WINDOW");
-
+	mlx_win = mlx_new_window(mlx_ptr, width, height, "JMF NEW WINDOW"); //TODO Dimensionar la ventana acorde al numero de pixels a representar
 	img.img = mlx_xpm_file_to_image(mlx_ptr, "textures/grass_redim.xpm", &img.width_im, &img.height_im);
 	if (!img.img)
 		printf ("Fallando\n");
@@ -57,7 +59,7 @@ void	ft_so_long(void)
 	mlx_loop(mlx_ptr);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	char	**map_array;
 
@@ -66,7 +68,8 @@ int main(int argc, char **argv)
 		map_array = ft_map_2_array(argv[1]);
 		//METER LOS CONDICIONALES PARA EJECUCION DE LOS CHEQUEOS
 		if (ft_check_maps_rectangle(map_array) == 0 ||
-			ft_check_map_leaks(map_array) == 0)
+			ft_check_map_leaks(map_array) == 0 ||
+			ft_check_std_elements(map_array) == 0)
 		{
 			ft_exiting(map_array);
 			return (0);

@@ -104,10 +104,11 @@ int	ft_check_maps_rectangle(char **map)
 
 int	ft_check_map_leaks(char **map)
 {
-	int lines = 0;
-	int chars = 0;
-	int i = 0;
+	int	lines;
+	int	chars;
+	int	i;
 
+	lines = 0;
 	while (map[lines])
 	{
 		chars = 0;
@@ -117,27 +118,62 @@ int	ft_check_map_leaks(char **map)
 	}
 	lines--;
 	chars--;
-	i = 0;
-	while (i < chars)
-	{
+	i = -1;
+	while (++i < chars)
 		if (map[0][i] != '1' || map[lines][i] != '1')
-		{
-			//ft_error_exit();
 			return (perror("Error.\nThe map is not closed"), 0);
-		}
-		i++;
-	}
-	i = 0;
-	while (i < lines)
-	{
+	i = -1;
+	while (++i < lines)
 		if (map[i][0] != '1' || map[i][chars - 1] != '1')
-		{
-			//ft_error_exit();
 			return (perror("Error.\nThe map is not closed"), 0);
+	return (1);
+}
+
+
+//TODO Crear funcion para comprobar que el mapa solo contiene los caracteres permitidos
+
+/*
+ * #FT_CHECK_STD_ELEMENTS
+ * 		checks if the given map has the right quantity of elements
+ * 		- At least 1 collectable (c or C)
+ * 		- Only 1 Exit (e or E)
+ * 		- Only 1 Initial Position (p or P)
+ *
+ * #PARAMETERS
+ * 		- char **map --> Is the .ber file converted to a char array.
+ *
+ * #RETURN
+ * 		- 0 if the .ber does not fulfil with the elements number.
+ * 		- 1 if the .ber is OK.
+ */
+
+int	ft_check_std_elements(char **map)
+//TODO La funcion tiene mas de 25 lineas. Quizas haya que segmentarla
+{
+	int	lines = 0;
+	int	i;
+	int	count_c = 0;
+	int	count_e = 0;
+	int	count_p = 0;
+
+	while (map[lines])
+		lines++;
+	lines--;
+	while (lines >= 0)
+	{
+		i = -1;
+		while (map[lines][++i])
+		{
+			if (map[lines][i] == 'c' || map[lines][i] == 'C')
+				count_c++;
+			else if (map[lines][i] == 'e' || map[lines][i] == 'E')
+				count_e++;
+			else if (map[lines][i] == 'p' || map[lines][i] == 'P')
+				count_p++;
 		}
-		i++;
-		//printf("Lines: %d\n", lines);
+		lines--;
 	}
-	//printf("Llego al final\n");
+	if (count_c < 1 || count_e != 1 || count_p != 1)
+		return (perror("Number of elements incorrect"), 0);
 	return (1);
 }
