@@ -130,8 +130,6 @@ int	ft_check_map_leaks(char **map)
 }
 
 
-//TODO Crear funcion para comprobar que el mapa solo contiene los caracteres permitidos
-
 /*
  * #FT_CHECK_STD_ELEMENTS
  * 		checks if the given map has the right quantity of elements
@@ -175,5 +173,45 @@ int	ft_check_std_elements(char **map)
 	}
 	if (count_c < 1 || count_e != 1 || count_p != 1)
 		return (perror("Number of elements incorrect"), 0);
+	return (1);
+}
+
+/*
+ * #FT_CHECK_NOSTD_ELEMENTS
+ * 		checks if the given map has only the allowed elements
+		- 1 / 0 / c / C / e / E / p / P
+ *
+ * #PARAMETERS
+ * 		- char **map --> Is the .ber file converted to a char array.
+ *
+ * #RETURN
+ * 		- 0 if the .ber file contains not allowed characters.
+ * 		- 1 if the .ber is OK.
+ */
+
+int	ft_check_nostd_elements(char **map)
+{
+	int	lines;
+	int	i;
+
+	lines = 0;
+	while (map[lines])
+		lines++;
+	while (map[--lines])
+	{
+		i = -1;
+		printf("Valor inicial: %c\n", map[lines][0]);
+		printf("Valor de linea: %d --> %s\n", lines, map[lines]);
+		while (map[lines][++i])
+		{
+			printf("Valor: %c\n", map[lines][i]);
+			if (map[lines][i] != '1' && map[lines][i] != '0' &&
+					map[lines][i] != 'e' && map[lines][i] != 'E' &&
+					map[lines][i] != 'c' && map[lines][i] != 'C' &&
+					map[lines][i] != 'p' && map[lines][i] != 'P' &&
+					map[lines][i] != '\n')
+				return (perror("Elements in the map not allowed"), 0);
+		}
+	}
 	return (1);
 }

@@ -12,25 +12,26 @@
  *
  * 		# Creada la ventana. OJO, Hay que dimensionarla a los pixeles necesarios segun los pixeles de la imagen a
  * 			representar y el numero de veces que mostramos esa imagen
+ * 		# Creada funcion para hacer los frees de array bidimensionales
+ * 			sl_exit.c -> void	ft_exiting(char **str)
+ * 		# Creada funcion para imprimir "Error" en caso de error
+ * 			sl_exit.c -> void	ft_error_exit(void)
  * 		# El mapa ("maps/map_0.ber") se carga en un char **
  * 			sl_checks_util.c -> char	**ft_map_2_array(char *map_route)
  * 		# Comprobamos si el mapa dado es un rectangulo
  * 			sl_checks_util.c -> int	ft_check_maps_rectangle(char **map)
  * 		#Comprobamos si el mapa dado esta cerrado
  * 			sl_checks_util.c -> int	ft_check_map_leaks(char **map)
- * 		# Creada funcion para hacer los frees de array bidimensionales
- * 			sl_exit.c -> void	ft_exiting(char **str)
- * 		# Creada funcion para imprimir "Error" en caso de error
- * 			sl_exit.c -> void	ft_error_exit(void)
  * 		# Creada funcion para comprobar la cantidad de elementos std
  * 			sl_checks_util.c -> int	ft_check_std_elements(char **map)
+ * 		# Creada fucnion para comprobar si hay caracteres no permitidos
+ * 			sl_checks_util.c -> int	ft_check_nostd_elements(char **map)
  *
  *
  * -- PROXIMO --
  *
  *		# Comenzar con los chequeos (ver notion)
  *			- Tiene algun caracter que no debe o duplicados inicio(P) o salida(E)?
- *			- Hay caracteres no permitidos / reconocibles?
  *			- Tiene solucion (FloodFill)
  *
  */
@@ -69,7 +70,9 @@ int	main(int argc, char **argv)
 		//METER LOS CONDICIONALES PARA EJECUCION DE LOS CHEQUEOS
 		if (ft_check_maps_rectangle(map_array) == 0 ||
 			ft_check_map_leaks(map_array) == 0 ||
-			ft_check_std_elements(map_array) == 0)
+			ft_check_nostd_elements(map_array) == 0 ||
+			ft_check_std_elements(map_array) == 0
+			)
 		{
 			ft_exiting(map_array);
 			return (0);
