@@ -17,6 +17,12 @@ typedef struct	s_window {
 	char	*title_win;
 }				t_window;
 
+//Estructura para guardar coordenadas
+typedef struct	s_coord{
+	int		x;
+	int		y;
+}				t_coord;
+
 typedef struct	s_image {
 	void	*img;
 //	char	*addr;
@@ -27,8 +33,13 @@ typedef struct	s_image {
 	int		height_im;
 }				t_image;
 //put your functions here
-//CHECKS
+//UTILS
 char	**ft_map_2_array(char *map_route);
+int		ft_map_rows(char **map);
+int		ft_map_columns(char **map);
+t_coord	ft_start_posit(char **map);
+char	**ft_dupli_map(char **map, t_coord size);
+//CHECKS
 int		ft_check_maps_rectangle(char **map);
 int		ft_check_map_leaks(char **map);
 int		ft_check_std_elements(char **map);

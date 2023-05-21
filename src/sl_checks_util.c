@@ -4,51 +4,6 @@
 #include "../inc/so_long.h"
 
 /*
- * #FT_MAP_2_ARRAY
- * 		converts the given map in .ber format into an 2 dimensional
- * 		array thanks to the functionality of Get_Next_Line program.
- *
- * #PARAMETERS
- * 		- char **map_route --> This parameter is the route of the .ber file (map)
- * 		added at execution time.
- *
- * #RETURN
- * 		- The program return the bidimensional array.
- */
-
-char	**ft_map_2_array(char *map_route)
-{
-	int		fd;
-	char	**map;
-	int		lines;
-	int		i;
-
-	map = NULL;
-	lines = 0;
-	i = 0;
-	fd = open(map_route, O_RDONLY);
-	if (fd == -1)
-		printf("File open error");
-	else
-	{
-		while (get_next_line(fd))
-			lines++;
-		//printf("Lineas: %d\n", lines);
-		close(fd);
-		map = malloc (sizeof (char *) * lines);
-		fd = open(map_route, O_RDONLY);
-		while (i < lines)
-		{
-			map[i++] = get_next_line(fd);
-			//printf("Linea %d: %s\n", i, map[i]);
-			//i++;
-		}
-		close(fd);
-	}
-	return (map);
-}
-
-/*
  * #FT_CHECK_MAPS_RECTANGLE
  * 		checks if the given map is a rectangle.
  * 		**rectangle: all rows have the same number of characters
@@ -108,16 +63,8 @@ int	ft_check_map_leaks(char **map)
 	int	chars;
 	int	i;
 
-	lines = 0;
-	while (map[lines])
-	{
-		chars = 0;
-		while (map[lines][chars])
-			chars++;
-		lines++;
-	}
-	lines--;
-	chars--;
+	lines = ft_map_rows(map) - 1;
+	chars = ft_map_columns(map) - 1;
 	i = -1;
 	while (++i < chars)
 		if (map[0][i] != '1' || map[lines][i] != '1')
@@ -146,17 +93,14 @@ int	ft_check_map_leaks(char **map)
  */
 
 int	ft_check_std_elements(char **map)
-//TODO La funcion tiene mas de 25 lineas. Quizas haya que segmentarla
 {
-	int	lines = 0;
+	int	lines;
 	int	i;
 	int	count_c = 0;
 	int	count_e = 0;
 	int	count_p = 0;
 
-	while (map[lines])
-		lines++;
-	lines--;
+	lines = ft_map_rows(map) - 1;
 	while (lines >= 0)
 	{
 		i = -1;
@@ -200,11 +144,8 @@ int	ft_check_nostd_elements(char **map)
 	while (map[--lines])
 	{
 		i = -1;
-		printf("Valor inicial: %c\n", map[lines][0]);
-		printf("Valor de linea: %d --> %s\n", lines, map[lines]);
 		while (map[lines][++i])
 		{
-			printf("Valor: %c\n", map[lines][i]);
 			if (map[lines][i] != '1' && map[lines][i] != '0' &&
 					map[lines][i] != 'e' && map[lines][i] != 'E' &&
 					map[lines][i] != 'c' && map[lines][i] != 'C' &&

@@ -17,22 +17,26 @@
  * 		# Creada funcion para imprimir "Error" en caso de error
  * 			sl_exit.c -> void	ft_error_exit(void)
  * 		# El mapa ("maps/map_0.ber") se carga en un char **
- * 			sl_checks_util.c -> char	**ft_map_2_array(char *map_route)
+ * 			sl_utils.c -> char	**ft_map_2_array(char *map_route)
  * 		# Comprobamos si el mapa dado es un rectangulo
  * 			sl_checks_util.c -> int	ft_check_maps_rectangle(char **map)
  * 		#Comprobamos si el mapa dado esta cerrado
  * 			sl_checks_util.c -> int	ft_check_map_leaks(char **map)
  * 		# Creada funcion para comprobar la cantidad de elementos std
  * 			sl_checks_util.c -> int	ft_check_std_elements(char **map)
- * 		# Creada fucnion para comprobar si hay caracteres no permitidos
+ * 		# Creada funcion para comprobar si hay caracteres no permitidos
  * 			sl_checks_util.c -> int	ft_check_nostd_elements(char **map)
  *
  *
  * -- PROXIMO --
  *
  *		# Comenzar con los chequeos (ver notion)
- *			- Tiene algun caracter que no debe o duplicados inicio(P) o salida(E)?
- *			- Tiene solucion (FloodFill)
+ *			- Crear funcion para determinar las filas del mapa (Y)
+ *			- Crear funcion para determinar las columnas del mapa (X)
+ *			- Tiene solucion (FloodFill). Ir recorriendo el mapa y cambiando
+ *			el caracter 0 y el caracter C por un caracter de control (X). Si al
+ *			finalizar el proceso queda algun valor de C (colleccionable) o E (salida),
+ *			el mapa es irresoluble.
  *
  */
 
@@ -77,6 +81,7 @@ int	main(int argc, char **argv)
 			ft_exiting(map_array);
 			return (0);
 		}
+		printf("Posicion Inicio: %d - %d\n", ft_start_posit(map_array).x, ft_start_posit(map_array).y);
 		ft_so_long();
 	}
 	//free(mlx_ptr);

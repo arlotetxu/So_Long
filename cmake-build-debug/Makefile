@@ -201,6 +201,30 @@ src/sl_checks_util.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/sl_checks_util.c.s
 .PHONY : src/sl_checks_util.c.s
 
+src/sl_ckecks_util_2.o: src/sl_ckecks_util_2.c.o
+.PHONY : src/sl_ckecks_util_2.o
+
+# target to build an object file
+src/sl_ckecks_util_2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/sl_ckecks_util_2.c.o
+.PHONY : src/sl_ckecks_util_2.c.o
+
+src/sl_ckecks_util_2.i: src/sl_ckecks_util_2.c.i
+.PHONY : src/sl_ckecks_util_2.i
+
+# target to preprocess a source file
+src/sl_ckecks_util_2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/sl_ckecks_util_2.c.i
+.PHONY : src/sl_ckecks_util_2.c.i
+
+src/sl_ckecks_util_2.s: src/sl_ckecks_util_2.c.s
+.PHONY : src/sl_ckecks_util_2.s
+
+# target to generate assembly for a file
+src/sl_ckecks_util_2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/sl_ckecks_util_2.c.s
+.PHONY : src/sl_ckecks_util_2.c.s
+
 src/sl_exit.o: src/sl_exit.c.o
 .PHONY : src/sl_exit.o
 
@@ -224,6 +248,30 @@ src/sl_exit.s: src/sl_exit.c.s
 src/sl_exit.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/sl_exit.c.s
 .PHONY : src/sl_exit.c.s
+
+src/sl_utils.o: src/sl_utils.c.o
+.PHONY : src/sl_utils.o
+
+# target to build an object file
+src/sl_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/sl_utils.c.o
+.PHONY : src/sl_utils.c.o
+
+src/sl_utils.i: src/sl_utils.c.i
+.PHONY : src/sl_utils.i
+
+# target to preprocess a source file
+src/sl_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/sl_utils.c.i
+.PHONY : src/sl_utils.c.i
+
+src/sl_utils.s: src/sl_utils.c.s
+.PHONY : src/sl_utils.s
+
+# target to generate assembly for a file
+src/sl_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/sl_utils.c.s
+.PHONY : src/sl_utils.c.s
 
 src/so_long.o: src/so_long.c.o
 .PHONY : src/so_long.o
@@ -267,9 +315,15 @@ help:
 	@echo "... src/sl_checks_util.o"
 	@echo "... src/sl_checks_util.i"
 	@echo "... src/sl_checks_util.s"
+	@echo "... src/sl_ckecks_util_2.o"
+	@echo "... src/sl_ckecks_util_2.i"
+	@echo "... src/sl_ckecks_util_2.s"
 	@echo "... src/sl_exit.o"
 	@echo "... src/sl_exit.i"
 	@echo "... src/sl_exit.s"
+	@echo "... src/sl_utils.o"
+	@echo "... src/sl_utils.i"
+	@echo "... src/sl_utils.s"
 	@echo "... src/so_long.o"
 	@echo "... src/so_long.i"
 	@echo "... src/so_long.s"
