@@ -44,39 +44,21 @@ char	**ft_map_2_array(char *map_route)
 }
 
 /*
- * #FT_MAP_ROWS
- * 		Counts the number of rows the map has
+ * #FT_MAP_SIZE
+ * 		Get the map size in x & y values
  *
  * #PARAMETERS
  *		- char **map --> The map converted into a char **
  *
  * #RETURN
- * 		- The number of rows in interger data type.
+ * 		- The map size expressed in x (columns) & y (rows) values.
  */
-int	ft_map_rows(char **map)
-{
-	int lines;
 
-	lines = 0;
-	while (map[lines])
-		lines++;
-	return (lines);
-}
-
-/*
- * #FT_MAP_ROWS
- * 		Counts the number of rows the map has
- *
- * #PARAMETERS
- *		- char **map --> The map converted into a char **
- *
- * #RETURN
- * 		- The number of rows in interger data type.
- */
-int	ft_map_columns(char **map)
+t_coord	ft_map_size(char **map)
 {
-	int cols;
-	int lines;
+	t_coord	map_size;
+	int	cols;
+	int	lines;
 
 	lines = 0;
 	cols = 0;
@@ -87,7 +69,11 @@ int	ft_map_columns(char **map)
 			cols++;
 		lines++;
 	}
-	return (cols);
+	map_size.x = cols;
+	map_size.y = lines;
+	//printf("map_size.x: %d\n", map_size.x);
+	//printf("map_size.y: %d\n", map_size.y);
+	return (map_size);
 }
 
 /*

@@ -63,8 +63,8 @@ int	ft_check_map_leaks(char **map)
 	int	chars;
 	int	i;
 
-	lines = ft_map_rows(map) - 1;
-	chars = ft_map_columns(map) - 1;
+	lines = ft_map_size(map).y - 1;
+	chars = ft_map_size(map).x - 1;
 	i = -1;
 	while (++i < chars)
 		if (map[0][i] != '1' || map[lines][i] != '1')
@@ -100,7 +100,7 @@ int	ft_check_std_elements(char **map)
 	int	count_e = 0;
 	int	count_p = 0;
 
-	lines = ft_map_rows(map) - 1;
+	lines = ft_map_size(map).y - 1;
 	while (lines >= 0)
 	{
 		i = -1;
@@ -116,7 +116,7 @@ int	ft_check_std_elements(char **map)
 		lines--;
 	}
 	if (count_c < 1 || count_e != 1 || count_p != 1)
-		return (perror("Number of elements incorrect"), 0);
+		return (perror("Error.\nNumber of elements incorrect"), 0);
 	return (1);
 }
 
@@ -151,7 +151,7 @@ int	ft_check_nostd_elements(char **map)
 					map[lines][i] != 'c' && map[lines][i] != 'C' &&
 					map[lines][i] != 'p' && map[lines][i] != 'P' &&
 					map[lines][i] != '\n')
-				return (perror("Elements in the map not allowed"), 0);
+				return (perror("Error.\nElements in the map not allowed"), 0);
 		}
 	}
 	return (1);

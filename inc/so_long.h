@@ -35,15 +35,18 @@ typedef struct	s_image {
 //put your functions here
 //UTILS
 char	**ft_map_2_array(char *map_route);
+t_coord	ft_map_size(char **map);
 int		ft_map_rows(char **map);
 int		ft_map_columns(char **map);
 t_coord	ft_start_posit(char **map);
-char	**ft_dupli_map(char **map, t_coord size);
 //CHECKS
 int		ft_check_maps_rectangle(char **map);
 int		ft_check_map_leaks(char **map);
 int		ft_check_std_elements(char **map);
 int		ft_check_nostd_elements(char **map);
+char	**ft_flood_fill(char **map);
+void	ft_fill_map(char **map, t_coord size, t_coord start);
+char	**ft_dupli_map(char **map, t_coord size);
 
 //EXIT
 void	ft_exiting(char **str);

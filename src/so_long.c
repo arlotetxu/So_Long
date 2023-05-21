@@ -81,7 +81,10 @@ int	main(int argc, char **argv)
 			ft_exiting(map_array);
 			return (0);
 		}
-		printf("Posicion Inicio: %d - %d\n", ft_start_posit(map_array).x, ft_start_posit(map_array).y);
+		//ft_map_size(map_array);
+		//printf("Posicion Inicio: %d - %d\n", ft_start_posit(map_array).x, ft_start_posit(map_array).y);
+		//ft_dupli_map(map_array, ft_map_size(map_array));
+		ft_flood_fill(map_array);
 		ft_so_long();
 	}
 	//free(mlx_ptr);
