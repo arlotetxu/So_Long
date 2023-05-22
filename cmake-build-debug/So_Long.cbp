@@ -93,7 +93,7 @@
 		<Unit filename="/Users/arlo/Documents/Mis_Proyectos/42_cursus/So_Long/src/sl_checks_util.c">
 			<Option target="so_long"/>
 		</Unit>
-		<Unit filename="/Users/arlo/Documents/Mis_Proyectos/42_cursus/So_Long/src/sl_ckecks_util_2.c">
+		<Unit filename="/Users/arlo/Documents/Mis_Proyectos/42_cursus/So_Long/src/sl_checks_util_2.c">
 			<Option target="so_long"/>
 		</Unit>
 		<Unit filename="/Users/arlo/Documents/Mis_Proyectos/42_cursus/So_Long/src/sl_exit.c">

@@ -72,11 +72,11 @@ int	main(int argc, char **argv)
 	{
 		map_array = ft_map_2_array(argv[1]);
 		//METER LOS CONDICIONALES PARA EJECUCION DE LOS CHEQUEOS
-		if (ft_check_maps_rectangle(map_array) == 0 ||
-			ft_check_map_leaks(map_array) == 0 ||
-			ft_check_nostd_elements(map_array) == 0 ||
-			ft_check_std_elements(map_array) == 0
-			)
+		if (ft_check_maps_rectangle(map_array) == 0
+			|| ft_check_map_leaks(map_array) == 0
+			|| ft_check_nostd_elements(map_array) == 0
+			|| ft_check_std_elements(map_array) == 0
+			|| ft_check_map_valid(map_array, ft_map_size(map_array)) == 0)
 		{
 			ft_exiting(map_array);
 			return (0);

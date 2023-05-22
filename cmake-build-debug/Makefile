@@ -201,29 +201,29 @@ src/sl_checks_util.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/sl_checks_util.c.s
 .PHONY : src/sl_checks_util.c.s
 
-src/sl_ckecks_util_2.o: src/sl_ckecks_util_2.c.o
-.PHONY : src/sl_ckecks_util_2.o
+src/sl_checks_util_2.o: src/sl_checks_util_2.c.o
+.PHONY : src/sl_checks_util_2.o
 
 # target to build an object file
-src/sl_ckecks_util_2.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/sl_ckecks_util_2.c.o
-.PHONY : src/sl_ckecks_util_2.c.o
+src/sl_checks_util_2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/sl_checks_util_2.c.o
+.PHONY : src/sl_checks_util_2.c.o
 
-src/sl_ckecks_util_2.i: src/sl_ckecks_util_2.c.i
-.PHONY : src/sl_ckecks_util_2.i
+src/sl_checks_util_2.i: src/sl_checks_util_2.c.i
+.PHONY : src/sl_checks_util_2.i
 
 # target to preprocess a source file
-src/sl_ckecks_util_2.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/sl_ckecks_util_2.c.i
-.PHONY : src/sl_ckecks_util_2.c.i
+src/sl_checks_util_2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/sl_checks_util_2.c.i
+.PHONY : src/sl_checks_util_2.c.i
 
-src/sl_ckecks_util_2.s: src/sl_ckecks_util_2.c.s
-.PHONY : src/sl_ckecks_util_2.s
+src/sl_checks_util_2.s: src/sl_checks_util_2.c.s
+.PHONY : src/sl_checks_util_2.s
 
 # target to generate assembly for a file
-src/sl_ckecks_util_2.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/sl_ckecks_util_2.c.s
-.PHONY : src/sl_ckecks_util_2.c.s
+src/sl_checks_util_2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/sl_checks_util_2.c.s
+.PHONY : src/sl_checks_util_2.c.s
 
 src/sl_exit.o: src/sl_exit.c.o
 .PHONY : src/sl_exit.o
@@ -315,9 +315,9 @@ help:
 	@echo "... src/sl_checks_util.o"
 	@echo "... src/sl_checks_util.i"
 	@echo "... src/sl_checks_util.s"
-	@echo "... src/sl_ckecks_util_2.o"
-	@echo "... src/sl_ckecks_util_2.i"
-	@echo "... src/sl_ckecks_util_2.s"
+	@echo "... src/sl_checks_util_2.o"
+	@echo "... src/sl_checks_util_2.i"
+	@echo "... src/sl_checks_util_2.s"
 	@echo "... src/sl_exit.o"
 	@echo "... src/sl_exit.i"
 	@echo "... src/sl_exit.s"

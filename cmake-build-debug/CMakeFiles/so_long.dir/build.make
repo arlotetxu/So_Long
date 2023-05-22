@@ -139,19 +139,19 @@ CMakeFiles/so_long.dir/src/sl_exit.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long.dir/src/sl_exit.c.s"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/arlo/Documents/Mis_Proyectos/42_cursus/So_Long/src/sl_exit.c -o CMakeFiles/so_long.dir/src/sl_exit.c.s
 
-CMakeFiles/so_long.dir/src/sl_ckecks_util_2.c.o: CMakeFiles/so_long.dir/flags.make
-CMakeFiles/so_long.dir/src/sl_ckecks_util_2.c.o: ../src/sl_ckecks_util_2.c
-CMakeFiles/so_long.dir/src/sl_ckecks_util_2.c.o: CMakeFiles/so_long.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/arlo/Documents/Mis_Proyectos/42_cursus/So_Long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/so_long.dir/src/sl_ckecks_util_2.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long.dir/src/sl_ckecks_util_2.c.o -MF CMakeFiles/so_long.dir/src/sl_ckecks_util_2.c.o.d -o CMakeFiles/so_long.dir/src/sl_ckecks_util_2.c.o -c /Users/arlo/Documents/Mis_Proyectos/42_cursus/So_Long/src/sl_ckecks_util_2.c
+CMakeFiles/so_long.dir/src/sl_checks_util_2.c.o: CMakeFiles/so_long.dir/flags.make
+CMakeFiles/so_long.dir/src/sl_checks_util_2.c.o: ../src/sl_checks_util_2.c
+CMakeFiles/so_long.dir/src/sl_checks_util_2.c.o: CMakeFiles/so_long.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/arlo/Documents/Mis_Proyectos/42_cursus/So_Long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/so_long.dir/src/sl_checks_util_2.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long.dir/src/sl_checks_util_2.c.o -MF CMakeFiles/so_long.dir/src/sl_checks_util_2.c.o.d -o CMakeFiles/so_long.dir/src/sl_checks_util_2.c.o -c /Users/arlo/Documents/Mis_Proyectos/42_cursus/So_Long/src/sl_checks_util_2.c
 
-CMakeFiles/so_long.dir/src/sl_ckecks_util_2.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long.dir/src/sl_ckecks_util_2.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/arlo/Documents/Mis_Proyectos/42_cursus/So_Long/src/sl_ckecks_util_2.c > CMakeFiles/so_long.dir/src/sl_ckecks_util_2.c.i
+CMakeFiles/so_long.dir/src/sl_checks_util_2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long.dir/src/sl_checks_util_2.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/arlo/Documents/Mis_Proyectos/42_cursus/So_Long/src/sl_checks_util_2.c > CMakeFiles/so_long.dir/src/sl_checks_util_2.c.i
 
-CMakeFiles/so_long.dir/src/sl_ckecks_util_2.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long.dir/src/sl_ckecks_util_2.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/arlo/Documents/Mis_Proyectos/42_cursus/So_Long/src/sl_ckecks_util_2.c -o CMakeFiles/so_long.dir/src/sl_ckecks_util_2.c.s
+CMakeFiles/so_long.dir/src/sl_checks_util_2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long.dir/src/sl_checks_util_2.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/arlo/Documents/Mis_Proyectos/42_cursus/So_Long/src/sl_checks_util_2.c -o CMakeFiles/so_long.dir/src/sl_checks_util_2.c.s
 
 CMakeFiles/so_long.dir/src/sl_utils.c.o: CMakeFiles/so_long.dir/flags.make
 CMakeFiles/so_long.dir/src/sl_utils.c.o: ../src/sl_utils.c
@@ -174,7 +174,7 @@ so_long_OBJECTS = \
 "CMakeFiles/so_long.dir/Get_Next_line/get_next_line_utils.c.o" \
 "CMakeFiles/so_long.dir/src/sl_checks_util.c.o" \
 "CMakeFiles/so_long.dir/src/sl_exit.c.o" \
-"CMakeFiles/so_long.dir/src/sl_ckecks_util_2.c.o" \
+"CMakeFiles/so_long.dir/src/sl_checks_util_2.c.o" \
 "CMakeFiles/so_long.dir/src/sl_utils.c.o"
 
 # External object files for target so_long
@@ -185,7 +185,7 @@ so_long: CMakeFiles/so_long.dir/Get_Next_line/get_next_line.c.o
 so_long: CMakeFiles/so_long.dir/Get_Next_line/get_next_line_utils.c.o
 so_long: CMakeFiles/so_long.dir/src/sl_checks_util.c.o
 so_long: CMakeFiles/so_long.dir/src/sl_exit.c.o
-so_long: CMakeFiles/so_long.dir/src/sl_ckecks_util_2.c.o
+so_long: CMakeFiles/so_long.dir/src/sl_checks_util_2.c.o
 so_long: CMakeFiles/so_long.dir/src/sl_utils.c.o
 so_long: CMakeFiles/so_long.dir/build.make
 so_long: CMakeFiles/so_long.dir/link.txt

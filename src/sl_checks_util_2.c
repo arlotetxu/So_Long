@@ -109,3 +109,30 @@ char	**ft_flood_fill(char **map)
 }
 
 //TODO Crear funcion para comprobar que no me quedan coleccionables (C) ni tengo la salida (E)
+int	ft_check_map_valid(char **map, t_coord size)
+{
+	int		lines;
+	int		cols;
+	int		count;
+	char	**copy_map2;
+
+	lines = 0;
+	count = 0;
+	copy_map2 = ft_flood_fill(map);
+	while (lines < size.y)
+	{
+		cols = -1;
+		while (++cols < size.x)
+		{
+			if (copy_map2[lines][cols] == 'c' || copy_map2[lines][cols] == 'C'
+				|| copy_map2[lines][cols] == 'e' || copy_map2[lines][cols] == 'E')
+				count++;
+		}
+		lines++;
+	}
+	ft_exiting(copy_map2);
+	printf("Valor de count antes de salir: %d\n", count);
+	if (count == 0)
+		return (1);
+	return (perror("Error.\nIt is not possible to complete the map"), 0);
+}
