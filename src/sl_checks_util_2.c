@@ -130,9 +130,9 @@ int	ft_check_map_valid(char **map, t_coord size)
 		}
 		lines++;
 	}
-	ft_exiting(copy_map2);
+	//ft_exiting(copy_map2);
 	printf("Valor de count antes de salir: %d\n", count);
 	if (count == 0)
 		return (1);
-	return (perror("Error.\nIt is not possible to complete the map"), 0);
+	return (perror("Error.\nIt_is not possible to complete the map"), 0);
 }

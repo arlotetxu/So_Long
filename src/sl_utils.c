@@ -28,7 +28,7 @@ char	**ft_map_2_array(char *map_route)
 	i = 0;
 	fd = open(map_route, O_RDONLY);
 	if (fd == -1)
-		printf("File open error");
+		return (NULL);
 	else
 	{
 		while (get_next_line(fd))
@@ -71,8 +71,8 @@ t_coord	ft_map_size(char **map)
 	}
 	map_size.x = cols;
 	map_size.y = lines;
-	//printf("map_size.x: %d\n", map_size.x);
-	//printf("map_size.y: %d\n", map_size.y);
+//	printf("map_size.x_O: %d\n", map_size.x);
+//	printf("map_size.y_O: %d\n", map_size.y);
 	return (map_size);
 }
 

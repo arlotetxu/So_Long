@@ -19,28 +19,36 @@
 
 int	ft_check_maps_rectangle(char **map)
 {
-	int	rows;
-	int	columns;
-	int	col_base;
+//	int	rows;
+//	int	columns;
+//	int	col_base;
+//
+//	col_base = 0;
+//	while (map[0][col_base])
+//		col_base++;
+//	//printf("Col_base: %d\n", col_base);
+//	rows = 0;
+//	while (map[rows])
+//	{
+//		columns = 0;
+//		while (map[rows][columns])
+//			columns++;
+//		//printf("Fila %d - Columnas: %d\n", rows, columns);
+//		if (columns != col_base)
+//			return (perror("Error.\nThe map is not a rectangle"), 0);
+//		rows++;
+//	}
+//	if (columns > rows)
+//		return (1);
+//	return (0);
+	t_coord	map_size;
 
-	col_base = 0;
-	while (map[0][col_base])
-		col_base++;
-	//printf("Col_base: %d\n", col_base);
-	rows = 0;
-	while (map[rows])
-	{
-		columns = 0;
-		while (map[rows][columns])
-			columns++;
-		//printf("Fila %d - Columnas: %d\n", rows, columns);
-		if (columns != col_base)
-			return (perror("Error.\nThe map is not a rectangle"), 0);
-		rows++;
-	}
-	if (columns > rows)
+	map_size = ft_map_size(map);
+	printf("Map_size.x - colums: %d\n", map_size.x);
+	printf("Map_size.y - rows: %d\n", map_size.y);
+	if (map_size.x != map_size.y)
 		return (1);
-	return (0);
+	return (perror("The map is not a rectangle"), 0);
 }
 
 /*
