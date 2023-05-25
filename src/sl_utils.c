@@ -71,8 +71,8 @@ t_coord	ft_map_size(char **map)
 	}
 	map_size.x = cols;
 	map_size.y = lines;
-//	printf("map_size.x_O: %d\n", map_size.x);
-//	printf("map_size.y_O: %d\n", map_size.y);
+	printf("map_size.x_O: %d\n", map_size.x);
+	printf("map_size.y_O: %d\n", map_size.y);
 	return (map_size);
 }
 
