@@ -20,7 +20,7 @@ char	**ft_dupli_map(char **map, t_coord size)
 	int i;
 	int j;
 
-	copy_map = malloc(sizeof(char *) * size.y);
+	copy_map = malloc(sizeof(char *) * size.y + 1);
 	if (copy_map == NULL)
 		return (NULL);
 	i = -1;
@@ -33,12 +33,11 @@ char	**ft_dupli_map(char **map, t_coord size)
 		copy_map[i][size.x] = '\0';
 	}
 //	for (int i = 0; i < size.y; ++i)
-//		printf("%s\n", map[i]);
+//		printf("%s", map[i]);
 //	printf("---------------------------\n");
 //	for (int i = 0; i < size.y; ++i)
 //		printf("%s\n", copy_map[i]);
 //	printf("\n");
-//TODO Liberar los malloc generados aqui tras hacer las comprobaciones necesarias
 	return (copy_map);
 }
 
@@ -97,18 +96,32 @@ char	**ft_flood_fill(char **map)
 //	printf("------------COPIA---------------\n");
 //	for (int i = 0; i < map_size.y; ++i)
 //		printf("%s\n", map_copy[i]);
-	//ft_fill_map(map_copy, map_size, start_p, tab[begin.y][begin.x]);
 	ft_fill_map(map_copy, map_size, start_p);
 //	printf("------------COPIA MODIF---------------\n");
 //	for (int i = 0; i < map_size.y; ++i)
 //		printf("%s\n", map_copy[i]);
 //	printf("-----------ORIGINAL----------------\n");
 //	for (int i = 0; i < map_size.y; ++i)
-//		printf("%s\n", map[i]);
+//		printf("%s", map[i]);
 	return (map_copy);
 }
 
-//TODO Crear funcion para comprobar que no me quedan coleccionables (C) ni tengo la salida (E)
+/*
+ * #FT_CHECK_MAP_VALID
+ * 		After changing a copy of the map substituting the
+ * 		characters by an 'X', the function checks if there are
+ * 		still any character for the exit ('e' or 'E') or if it remains
+ * 		any collectable ('c' or 'C' )
+ *
+ * 	#PARAMETERS
+ * 		- char **map -> The original map
+ * 		- t_coord size -> the original map size (x and y)
+ *
+ * 	#RETURN
+ * 		0 if there are still 'exits' or 'collectables'
+ * 		1 if no characters beyond 1 or 0
+ */
+
 int	ft_check_map_valid(char **map, t_coord size)
 {
 	int		lines;
@@ -130,9 +143,31 @@ int	ft_check_map_valid(char **map, t_coord size)
 		}
 		lines++;
 	}
-	//ft_exiting(copy_map2);
-	printf("Valor de count antes de salir: %d\n", count);
+	ft_exiting(copy_map2);
 	if (count == 0)
 		return (1);
 	return (perror("Error.\nIt_is not possible to complete the map"), 0);
+}
+
+
+int	ft_check_map_ext(char *map_route)
+{
+	int i;
+	int j;
+	char	*ref;
+
+	ref = ".ber";
+	i = 0;
+	while (map_route[i])
+		i++;
+	i = i - 4;
+	j = 0;
+	while (map_route[i] && ref[j])
+	{
+		if (map_route[i] != ref[j])
+			return (perror("Error.\nThe map file referenced is not valid"), 0);
+		i++;
+		j++;
+	}
+	return (1);
 }

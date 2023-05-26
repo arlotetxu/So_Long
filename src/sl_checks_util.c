@@ -6,8 +6,7 @@
 /*
  * #FT_CHECK_MAPS_RECTANGLE
  * 		checks if the given map is a rectangle.
- * 		**rectangle: all rows have the same number of characters
- * 		**rectangle: more columns than rows
+ * 			rectangle: same nums of columns on each line
  *
  * #PARAMETERS
  * 		- char **map --> Is the .ber file converted to a char array.
@@ -19,36 +18,24 @@
 
 int	ft_check_maps_rectangle(char **map)
 {
-//	int	rows;
-//	int	columns;
-//	int	col_base;
-//
-//	col_base = 0;
-//	while (map[0][col_base])
-//		col_base++;
-//	//printf("Col_base: %d\n", col_base);
-//	rows = 0;
-//	while (map[rows])
-//	{
-//		columns = 0;
-//		while (map[rows][columns])
-//			columns++;
-//		//printf("Fila %d - Columnas: %d\n", rows, columns);
-//		if (columns != col_base)
-//			return (perror("Error.\nThe map is not a rectangle"), 0);
-//		rows++;
-//	}
-//	if (columns > rows)
-//		return (1);
-//	return (0);
 	t_coord	map_size;
+	int		lines;
+	int 	cols;
 
 	map_size = ft_map_size(map);
-	printf("Map_size.x - colums: %d\n", map_size.x);
-	printf("Map_size.y - rows: %d\n", map_size.y);
-	if (map_size.x != map_size.y)
-		return (1);
-	return (perror("The map is not a rectangle"), 0);
+//	printf("Map_size.x - colums en ft_check_maps_rectangle: %d\n", map_size.x);
+//	printf("Map_size.y - rows en ft_check_maps_rectangle: %d\n", map_size.y);
+	lines = 0;
+	while (map[lines])
+	{
+		cols = 0;
+		while (map[lines][cols])
+			cols++;
+		if (cols - 1 != map_size.x)
+			return (perror("Error.\nThe map is not a rectangle"), 0);
+		lines++;
+	}
+	return (1);
 }
 
 /*
@@ -71,19 +58,18 @@ int	ft_check_map_leaks(char **map)
 	int	chars;
 	int	i;
 
-	lines = ft_map_size(map).y - 1;
-	chars = ft_map_size(map).x - 1;
+	lines = ft_map_size(map).y;
+	chars = ft_map_size(map).x;
 	i = -1;
 	while (++i < chars)
-		if (map[0][i] != '1' || map[lines][i] != '1')
+		if (map[0][i] != '1' || map[lines - 1][i] != '1')
 			return (perror("Error.\nThe map is not closed"), 0);
-	i = -1;
+	i = 0;
 	while (++i < lines)
 		if (map[i][0] != '1' || map[i][chars - 1] != '1')
 			return (perror("Error.\nThe map is not closed"), 0);
 	return (1);
 }
-
 
 /*
  * #FT_CHECK_STD_ELEMENTS
@@ -145,11 +131,11 @@ int	ft_check_nostd_elements(char **map)
 {
 	int	lines;
 	int	i;
+	t_coord	map_size;
 
-	lines = 0;
-	while (map[lines])
-		lines++;
-	while (map[--lines])
+	map_size = ft_map_size(map);
+	lines = -1;
+	while (++lines < map_size.y)
 	{
 		i = -1;
 		while (map[lines][++i])

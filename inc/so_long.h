@@ -48,6 +48,7 @@ char	**ft_flood_fill(char **map);
 void	ft_fill_map(char **map, t_coord size, t_coord start);
 char	**ft_dupli_map(char **map, t_coord size);
 int		ft_check_map_valid(char **map, t_coord size);
+int		ft_check_map_ext(char *map_route);
 
 //EXIT
 void	ft_exiting(char **str);

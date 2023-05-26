@@ -18,6 +18,8 @@
  * 			sl_exit.c -> void	ft_error_exit(void)
  * 		# El mapa ("maps/map_0.ber") se carga en un char **
  * 			sl_utils.c -> char	**ft_map_2_array(char *map_route)
+ * 		# Creada funcion para conocer las filas y columnas de un mapa (devuelve desde 1)
+ * 			sl_utils.c -> t_coord	ft_map_size(char **map)
  * 		# Comprobamos si el mapa dado es un rectangulo
  * 			sl_checks_util.c -> int	ft_check_maps_rectangle(char **map)
  * 		#Comprobamos si el mapa dado esta cerrado
@@ -26,17 +28,14 @@
  * 			sl_checks_util.c -> int	ft_check_std_elements(char **map)
  * 		# Creada funcion para comprobar si hay caracteres no permitidos
  * 			sl_checks_util.c -> int	ft_check_nostd_elements(char **map)
+ * 		# Creada funcion para comprobar si el mapa es resolube
+ * 			sl_checks_util_2.c -> int	ft_check_map_valid(char **map, t_coord size)
  *
  *
  * -- PROXIMO --
  *
  *		# Comenzar con los chequeos (ver notion)
- *			- Crear funcion para determinar las filas del mapa (Y)
- *			- Crear funcion para determinar las columnas del mapa (X)
- *			- Tiene solucion (FloodFill). Ir recorriendo el mapa y cambiando
- *			el caracter 0 y el caracter C por un caracter de control (X). Si al
- *			finalizar el proceso queda algun valor de C (colleccionable) o E (salida),
- *			el mapa es irresoluble.
+ *			- Comprobar si la extension del mapa es .ber
  *
  */
 
@@ -58,21 +57,23 @@ void	ft_so_long(void)
 //	printf("Imagen height: %d\n", img.height_im);
 	mlx_put_image_to_window(mlx_ptr, mlx_win, img.img, 0,0);
 	mlx_put_image_to_window(mlx_ptr, mlx_win, img.img, 80,0);
-	//COMPRUEBO SI LA FUNCION ft_map_2_array se ejecuta correctamente
-	//ft_map_2_array(argv[1]);
-	//printf("Testando funcion ft_map_2_array: %s\n", test[0]);
 	mlx_loop(mlx_ptr);
 }
 
 int	main(int argc, char **argv)
 {
 	char	**map_array;
+	int 	fd;
 
 	if (argc == 2)
 	{
+		fd = open(argv[1], O_RDONLY);
+		if (fd == -1)
+			return (perror("Error.\nChecking file"), 0);
 		map_array = ft_map_2_array(argv[1]);
-		//METER LOS CONDICIONALES PARA EJECUCION DE LOS CHEQUEOS
-		if (ft_check_maps_rectangle(map_array) == 0
+//		//METER LOS CONDICIONALES PARA EJECUCION DE LOS CHEQUEOS
+		if (ft_check_map_ext(argv[1]) == 0
+			|| ft_check_maps_rectangle(map_array) == 0
 			|| ft_check_map_leaks(map_array) == 0
 			|| ft_check_nostd_elements(map_array) == 0
 			|| ft_check_std_elements(map_array) == 0
@@ -81,12 +82,9 @@ int	main(int argc, char **argv)
 			ft_exiting(map_array);
 			return (0);
 		}
-		//ft_map_size(map_array);
-		//printf("Posicion Inicio: %d - %d\n", ft_start_posit(map_array).x, ft_start_posit(map_array).y);
-		//ft_dupli_map(map_array, ft_map_size(map_array));
-		ft_flood_fill(map_array);
 		ft_so_long();
 	}
+	//ft_exiting(map_array);
 	//free(mlx_ptr);
 	return (0);
 }

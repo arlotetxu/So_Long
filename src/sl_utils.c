@@ -34,10 +34,11 @@ char	**ft_map_2_array(char *map_route)
 		while (get_next_line(fd))
 			lines++;
 		close(fd);
-		map = malloc (sizeof (char *) * lines);
+		map = malloc (sizeof (char *) * lines + 1);
 		fd = open(map_route, O_RDONLY);
 		while (i < lines)
 			map[i++] = get_next_line(fd);
+		map[i] = NULL;
 		close(fd);
 	}
 	return (map);
@@ -65,14 +66,14 @@ t_coord	ft_map_size(char **map)
 	while (map[lines])
 	{
 		cols = 0;
-		while (map[lines][cols])
+		while (map[lines][cols] && map[lines][cols] != '\n')
 			cols++;
 		lines++;
 	}
 	map_size.x = cols;
 	map_size.y = lines;
-	printf("map_size.x_O: %d\n", map_size.x);
-	printf("map_size.y_O: %d\n", map_size.y);
+//	printf("map_size.x en ft_map_size: %d\n", map_size.x);
+//	printf("map_size.y en ft_map_size: %d\n", map_size.y);
 	return (map_size);
 }
 
