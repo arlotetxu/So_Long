@@ -40,14 +40,14 @@ INC = inc
 
 # Files
 SRC_FILES = so_long sl_utils sl_checks_util sl_checks_util_2 \
-				sl_exit
+				sl_exit sl_place_textures
 SRCS = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
 #Commands
 CC 			= 	gcc
 #CFLAGS 		= 	-Wall -Wextra -Werror -g3 -fsanitize=address
-CFLAGS 		= 	-Wall -Wextra -Werror
+CFLAGS 		= 	-Wall -Wextra -Werror -g3
 RM 			= 	rm -rf
 MLX			=	-Lmlx -lmlx -framework OpenGL -framework AppKit
 

@@ -30,34 +30,41 @@
  * 			sl_checks_util.c -> int	ft_check_nostd_elements(char **map)
  * 		# Creada funcion para comprobar si el mapa es resolube
  * 			sl_checks_util_2.c -> int	ft_check_map_valid(char **map, t_coord size)
+ * 		# Creada funcion para comprobar si la extension del mapa es .ber
+ * 			sl_checks_util_2.c -> int	ft_check_map_ext(char *map_route)
  *
  *
  * -- PROXIMO --
  *
- *		# Comenzar con los chequeos (ver notion)
- *			- Comprobar si la extension del mapa es .ber
+ *		# Comenzar a pintar la ventana
  *
  */
 
 //void	ft_so_long(char **argv)
-void	ft_so_long(void)
+void	ft_so_long(char **map)
 {
-	void *mlx_ptr;
-	void *mlx_win;
+//	void *mlx_ptr;
+//	void *mlx_win;
+	t_general_p general_p;
 	t_image	img;
-	//char	**test = NULL;
 
-	mlx_ptr = mlx_init();
-	mlx_win = mlx_new_window(mlx_ptr, width, height, "JMF NEW WINDOW"); //TODO Dimensionar la ventana acorde al numero de pixels a representar
-	img.img = mlx_xpm_file_to_image(mlx_ptr, "textures/grass_redim.xpm", &img.width_im, &img.height_im);
+//	mlx_ptr = mlx_init();
+	general_p.mlx_ptr = mlx_init();
+	img.img = mlx_xpm_file_to_image(general_p.mlx_ptr, "textures/grass_redim.xpm", &img.width_im, &img.height_im);
+	general_p.win_ptr = mlx_new_window(general_p.mlx_ptr, ft_map_size(map).x * img.width_im,
+									 ft_map_size(map).y * img.height_im, "JMF NEW WINDOW");
+	//mlx_win = mlx_new_window(mlx_ptr, width, height, "JMF NEW WINDOW"); //TODO Dimensionar la ventana acorde al numero de pixels a representar
+
+	//img.img = mlx_xpm_file_to_image(general_p.mlx_ptr, "textures/grass_redim.xpm", &img.width_im, &img.height_im);
 	if (!img.img)
 		printf ("Fallando\n");
 	//IMPRIMO LOS VALORES DE WIDTH Y HEIGHT DE LA IMAGEN PUESTA
 //	printf("Imagen width: %d\n", img.width_im);
 //	printf("Imagen height: %d\n", img.height_im);
-	mlx_put_image_to_window(mlx_ptr, mlx_win, img.img, 0,0);
-	mlx_put_image_to_window(mlx_ptr, mlx_win, img.img, 80,0);
-	mlx_loop(mlx_ptr);
+	mlx_put_image_to_window(general_p.mlx_ptr, general_p.win_ptr, img.img, 0,0);
+	mlx_put_image_to_window(general_p.mlx_ptr, general_p.win_ptr, img.img, 80,0);
+	mlx_put_image_to_window(general_p.mlx_ptr, general_p.win_ptr, img.img, 160,0);
+	mlx_loop(general_p.mlx_ptr);
 }
 
 int	main(int argc, char **argv)
@@ -82,7 +89,7 @@ int	main(int argc, char **argv)
 			ft_exiting(map_array);
 			return (0);
 		}
-		ft_so_long();
+		ft_so_long(map_array);
 	}
 	//ft_exiting(map_array);
 	//free(mlx_ptr);

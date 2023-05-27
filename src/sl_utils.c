@@ -34,10 +34,14 @@ char	**ft_map_2_array(char *map_route)
 		while (get_next_line(fd))
 			lines++;
 		close(fd);
-		map = malloc (sizeof (char *) * lines + 1);
+		map = malloc (sizeof (char *) * (lines + 1));
 		fd = open(map_route, O_RDONLY);
 		while (i < lines)
-			map[i++] = get_next_line(fd);
+		{
+			map[i] = get_next_line(fd);
+			map[i][ft_strlen(map[i]) - 1] = '\0';
+			i++;
+		}
 		map[i] = NULL;
 		close(fd);
 	}
@@ -63,14 +67,9 @@ t_coord	ft_map_size(char **map)
 
 	lines = 0;
 	cols = 0;
-	while (map[lines])
-	{
-		cols = 0;
-		while (map[lines][cols] && map[lines][cols] != '\n')
-			cols++;
+	while (map[lines] != NULL)
 		lines++;
-	}
-	map_size.x = cols;
+	map_size.x = ft_strlen(map[0]);
 	map_size.y = lines;
 //	printf("map_size.x en ft_map_size: %d\n", map_size.x);
 //	printf("map_size.y en ft_map_size: %d\n", map_size.y);
@@ -78,8 +77,16 @@ t_coord	ft_map_size(char **map)
 }
 
 /*
+ * #FT_START_POSIT
+ * 		Get the position of the player starting point
  *
+ * #PARAMETERS
+ *		- char **map --> The map converted into a char **
+ *
+ * #RETURN
+ * 		- a t_coord with the position of the 'P' or 'p' in coordinates.
  */
+
 t_coord	ft_start_posit(char **map)
 {
 	t_coord	start_coor;

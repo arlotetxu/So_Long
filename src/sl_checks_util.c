@@ -31,7 +31,7 @@ int	ft_check_maps_rectangle(char **map)
 		cols = 0;
 		while (map[lines][cols])
 			cols++;
-		if (cols - 1 != map_size.x)
+		if (cols != map_size.x)
 			return (perror("Error.\nThe map is not a rectangle"), 0);
 		lines++;
 	}
@@ -63,11 +63,11 @@ int	ft_check_map_leaks(char **map)
 	i = -1;
 	while (++i < chars)
 		if (map[0][i] != '1' || map[lines - 1][i] != '1')
-			return (perror("Error.\nThe map is not closed"), 0);
+			return (perror("Error1.\nThe map is not closed"), 0);
 	i = 0;
 	while (++i < lines)
 		if (map[i][0] != '1' || map[i][chars - 1] != '1')
-			return (perror("Error.\nThe map is not closed"), 0);
+			return (perror("Error2.\nThe map is not closed"), 0);
 	return (1);
 }
 

@@ -93,6 +93,9 @@ char	**ft_flood_fill(char **map)
 	map_copy = ft_dupli_map(map, ft_map_size(map));
 	map_size = ft_map_size(map_copy);
 	start_p = ft_start_posit(map_copy);
+//	printf("-----------ORIGINAL----------------\n");
+//	for (int i = 0; i < map_size.y; ++i)
+//		printf("%s\n", map[i]);
 //	printf("------------COPIA---------------\n");
 //	for (int i = 0; i < map_size.y; ++i)
 //		printf("%s\n", map_copy[i]);
@@ -100,9 +103,6 @@ char	**ft_flood_fill(char **map)
 //	printf("------------COPIA MODIF---------------\n");
 //	for (int i = 0; i < map_size.y; ++i)
 //		printf("%s\n", map_copy[i]);
-//	printf("-----------ORIGINAL----------------\n");
-//	for (int i = 0; i < map_size.y; ++i)
-//		printf("%s", map[i]);
 	return (map_copy);
 }
 
@@ -149,6 +149,18 @@ int	ft_check_map_valid(char **map, t_coord size)
 	return (perror("Error.\nIt_is not possible to complete the map"), 0);
 }
 
+/*
+ * #FT_CHECK_MAP_EXT
+ * 		The function checks if the given map file is a .ber extension
+ *
+ * #PARAMETERS
+ *		- char **map_route --> The route to the file given as an
+ *			argument(ARGV[1])
+ *
+ * #RETURN
+ * 		- 0 if the map file IS NOT a .ber.
+ * 		- 1 if the map file IS a .ber
+ */
 
 int	ft_check_map_ext(char *map_route)
 {

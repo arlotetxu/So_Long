@@ -10,6 +10,7 @@
 # include <fcntl.h>
 # include "../mlx/mlx.h"
 # include "../Get_Next_line/get_next_line.h"
+# include "../libft/libft.h"
 
 typedef struct	s_window {
 	int		width_win;
@@ -17,12 +18,19 @@ typedef struct	s_window {
 	char	*title_win;
 }				t_window;
 
-//Estructura para guardar coordenadas
+//Struct to save the coordinates
 typedef struct	s_coord{
 	int		x;
 	int		y;
 }				t_coord;
 
+//Struct to store the general program data
+typedef struct	s_general {
+	void	*mlx_ptr;
+	void	*win_ptr;
+}				t_general_p;
+
+// Struct to save all the data related to the images
 typedef struct	s_image {
 	void	*img;
 //	char	*addr;
@@ -36,8 +44,6 @@ typedef struct	s_image {
 //UTILS
 char	**ft_map_2_array(char *map_route);
 t_coord	ft_map_size(char **map);
-int		ft_map_rows(char **map);
-int		ft_map_columns(char **map);
 t_coord	ft_start_posit(char **map);
 //CHECKS
 int		ft_check_maps_rectangle(char **map);
@@ -49,6 +55,9 @@ void	ft_fill_map(char **map, t_coord size, t_coord start);
 char	**ft_dupli_map(char **map, t_coord size);
 int		ft_check_map_valid(char **map, t_coord size);
 int		ft_check_map_ext(char *map_route);
+//CREATING THE WINDOW & IMAGES
+void	ft_so_long(char **map);
+void	ft_place_textures (t_general_p general_p, char **map);
 
 //EXIT
 void	ft_exiting(char **str);
