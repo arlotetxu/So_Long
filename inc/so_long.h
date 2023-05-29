@@ -18,7 +18,7 @@ typedef struct	s_window {
 	char	*title_win;
 }				t_window;
 
-//Struct to save the coordinates
+//Struct to save a vector
 typedef struct	s_coord{
 	int		x;
 	int		y;
@@ -33,14 +33,13 @@ typedef struct	s_general {
 // Struct to save all the data related to the images
 typedef struct	s_image {
 	void	*img;
-//	char	*addr;
-//	int		bits_per_pixel;
-//	int		line_length;
-//	int		endian;
 	int		width_im;
 	int		height_im;
 }				t_image;
 //put your functions here
+//DEFINES TO GET THE DIFFERENT CHARACTERS TEXTURES
+# define WALL "textures/bricks.xpm"
+# define FREE_ "textures/grass_redim.xpm"
 //UTILS
 char	**ft_map_2_array(char *map_route);
 t_coord	ft_map_size(char **map);
@@ -57,7 +56,8 @@ int		ft_check_map_valid(char **map, t_coord size);
 int		ft_check_map_ext(char *map_route);
 //CREATING THE WINDOW & IMAGES
 void	ft_so_long(char **map);
-void	ft_place_textures (t_general_p general_p, char **map);
+void	ft_pass_image(char **map, t_general_p general_p);
+void	ft_place_texture(t_general_p general_p, char *texture, int x, int y);
 
 //EXIT
 void	ft_exiting(char **str);

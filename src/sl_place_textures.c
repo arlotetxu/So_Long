@@ -3,26 +3,38 @@
 //
 #include "../inc/so_long.h"
 
-/*
-void	ft_place_textures (t_general_p general_p, char **map)
+void	ft_place_texture(t_general_p general_p, char *texture, int x, int y)
 {
-	t_image img;
-	int 	cols;
-	int 	lines;
+	t_image	img_;
 
-	// Printeando solo los 1
-	img.img = mlx_xpm_file_to_image(general_p.mlx_ptr, "textures/grass_redim.xpm", &img.width_im, &img.height_im);
-	if (!img.img)
-		printf ("Fallando\n");
+	img_.img = mlx_xpm_file_to_image(general_p.mlx_ptr, texture, &img_.width_im, &img_.height_im);
+	mlx_put_image_to_window(general_p.mlx_ptr, general_p.win_ptr, img_.img, x, y);
+}
+
+
+void	ft_pass_image(char **map, t_general_p general_p)
+{
+	int	lines;
+	int	cols;
+	int	x;
+	int	y;
+
 	lines = 0;
+	y = 0;
 	while (map[lines])
 	{
 		cols = 0;
-		while
+		x = 0;
+		while (map[lines][cols])
+		{
+			if (map[lines][cols] == '1')
+				ft_place_texture(general_p, WALL, x, y);
+			else if (map[lines][cols] == '0')
+				ft_place_texture(general_p, FREE_, x, y);
+			x = x + 80;
+			cols++;
+		}
+		lines++;
+		y = y + 80;
 	}
-	//IMPRIMO LOS VALORES DE WIDTH Y HEIGHT DE LA IMAGEN PUESTA
-//	printf("Imagen width: %d\n", img.width_im);
-//	printf("Imagen height: %d\n", img.height_im);
-	mlx_put_image_to_window(general_p.mlx_ptr, general_p.win_ptr, img.img, 0,0);
-	mlx_put_image_to_window(general_p.mlx_ptr, general_p.win_ptr, img.img, 80,0);
-}*/
+}

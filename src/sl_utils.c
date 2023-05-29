@@ -62,11 +62,11 @@ char	**ft_map_2_array(char *map_route)
 t_coord	ft_map_size(char **map)
 {
 	t_coord	map_size;
-	int	cols;
+	//int	cols;
 	int	lines;
 
 	lines = 0;
-	cols = 0;
+	//cols = 0;
 	while (map[lines] != NULL)
 		lines++;
 	map_size.x = ft_strlen(map[0]);

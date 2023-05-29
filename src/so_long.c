@@ -45,8 +45,8 @@ void	ft_so_long(char **map)
 {
 //	void *mlx_ptr;
 //	void *mlx_win;
-	t_general_p general_p;
-	t_image	img;
+	t_general_p	general_p;
+	t_image		img;
 
 //	mlx_ptr = mlx_init();
 	general_p.mlx_ptr = mlx_init();
@@ -56,14 +56,15 @@ void	ft_so_long(char **map)
 	//mlx_win = mlx_new_window(mlx_ptr, width, height, "JMF NEW WINDOW"); //TODO Dimensionar la ventana acorde al numero de pixels a representar
 
 	//img.img = mlx_xpm_file_to_image(general_p.mlx_ptr, "textures/grass_redim.xpm", &img.width_im, &img.height_im);
-	if (!img.img)
-		printf ("Fallando\n");
+//	if (!img.img)
+//		printf ("Fallando\n");
 	//IMPRIMO LOS VALORES DE WIDTH Y HEIGHT DE LA IMAGEN PUESTA
 //	printf("Imagen width: %d\n", img.width_im);
 //	printf("Imagen height: %d\n", img.height_im);
-	mlx_put_image_to_window(general_p.mlx_ptr, general_p.win_ptr, img.img, 0,0);
-	mlx_put_image_to_window(general_p.mlx_ptr, general_p.win_ptr, img.img, 80,0);
-	mlx_put_image_to_window(general_p.mlx_ptr, general_p.win_ptr, img.img, 160,0);
+//	mlx_put_image_to_window(general_p.mlx_ptr, general_p.win_ptr, img.img, 0,0);
+//	mlx_put_image_to_window(general_p.mlx_ptr, general_p.win_ptr, img.img, 80,0);
+//	mlx_put_image_to_window(general_p.mlx_ptr, general_p.win_ptr, img.img, 160,0);
+	ft_pass_image(map, general_p);
 	mlx_loop(general_p.mlx_ptr);
 }
 
