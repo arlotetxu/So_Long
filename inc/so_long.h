@@ -40,6 +40,9 @@ typedef struct	s_image {
 //DEFINES TO GET THE DIFFERENT CHARACTERS TEXTURES
 # define WALL "textures/bricks.xpm"
 # define FREE_ "textures/grass_redim.xpm"
+# define POO "textures/poo.xpm"
+# define TOILET "textures/toilet.xpm"
+# define EXIT "textures/exit.xpm"
 //UTILS
 char	**ft_map_2_array(char *map_route);
 t_coord	ft_map_size(char **map);
@@ -56,7 +59,8 @@ int		ft_check_map_valid(char **map, t_coord size);
 int		ft_check_map_ext(char *map_route);
 //CREATING THE WINDOW & IMAGES
 void	ft_so_long(char **map);
-void	ft_pass_image(char **map, t_general_p general_p);
+void	ft_pass_char(char **map, t_general_p general_p);
+void	ft_pass_image(char map_char, t_general_p general_p, int x, int y);
 void	ft_place_texture(t_general_p general_p, char *texture, int x, int y);
 
 //EXIT

@@ -146,7 +146,7 @@ int	ft_check_map_valid(char **map, t_coord size)
 	ft_exiting(copy_map2);
 	if (count == 0)
 		return (1);
-	return (perror("Error.\nIt_is not possible to complete the map"), 0);
+	return (perror("Error.\nIt is not possible to complete the map"), 0);
 }
 
 /*

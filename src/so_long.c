@@ -32,15 +32,20 @@
  * 			sl_checks_util_2.c -> int	ft_check_map_valid(char **map, t_coord size)
  * 		# Creada funcion para comprobar si la extension del mapa es .ber
  * 			sl_checks_util_2.c -> int	ft_check_map_ext(char *map_route)
+ * 		# Creadas funciones para pintar el mapa
+ * 			sl_place_textures.c -> void	ft_pass_char(char **map, t_general_p general_p)
+ * 			sl_place_textures.c -> void	ft_pass_image(char map_char, t_general_p general_p, int x, int y)
+ * 			sl_place_textures.c -> void	ft_place_texture(t_general_p general_p, char *texture, int x, int y)
  *
  *
  * -- PROXIMO --
  *
- *		# Comenzar a pintar la ventana
+ *		# Comentarios en nuevas funciones para pintar el mapa
+ *		# Comprobar que los ficheros xmp para poner las texturas no estan corruptos
+ *		# Comenzar cpn movimientos
  *
  */
 
-//void	ft_so_long(char **argv)
 void	ft_so_long(char **map)
 {
 //	void *mlx_ptr;
@@ -64,7 +69,8 @@ void	ft_so_long(char **map)
 //	mlx_put_image_to_window(general_p.mlx_ptr, general_p.win_ptr, img.img, 0,0);
 //	mlx_put_image_to_window(general_p.mlx_ptr, general_p.win_ptr, img.img, 80,0);
 //	mlx_put_image_to_window(general_p.mlx_ptr, general_p.win_ptr, img.img, 160,0);
-	ft_pass_image(map, general_p);
+	//ft_pass_image(map, general_p);
+	ft_pass_char(map, general_p);
 	mlx_loop(general_p.mlx_ptr);
 }
 

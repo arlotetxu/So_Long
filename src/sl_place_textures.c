@@ -12,7 +12,21 @@ void	ft_place_texture(t_general_p general_p, char *texture, int x, int y)
 }
 
 
-void	ft_pass_image(char **map, t_general_p general_p)
+void	ft_pass_image(char map_char, t_general_p general_p, int x, int y)
+{
+	if (map_char == '1')
+		ft_place_texture(general_p, WALL, x, y);
+	else if (map_char == '0')
+		ft_place_texture(general_p, FREE_, x, y);
+	else if (map_char == 'c' || map_char == 'C')
+		ft_place_texture(general_p, POO, x, y);
+	else if (map_char == 'P' || map_char == 'p')
+		ft_place_texture(general_p, TOILET, x, y);
+	else if (map_char == 'e' || map_char == 'E')
+		ft_place_texture(general_p, EXIT, x, y);
+}
+
+void	ft_pass_char(char **map, t_general_p general_p)
 {
 	int	lines;
 	int	cols;
@@ -27,10 +41,7 @@ void	ft_pass_image(char **map, t_general_p general_p)
 		x = 0;
 		while (map[lines][cols])
 		{
-			if (map[lines][cols] == '1')
-				ft_place_texture(general_p, WALL, x, y);
-			else if (map[lines][cols] == '0')
-				ft_place_texture(general_p, FREE_, x, y);
+			ft_pass_image(map[lines][cols], general_p, x, y);
 			x = x + 80;
 			cols++;
 		}
