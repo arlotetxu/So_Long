@@ -40,7 +40,7 @@ INC = inc
 
 # Files
 SRC_FILES = so_long sl_utils sl_checks_util sl_checks_util_2 \
-				sl_exit sl_place_textures
+				sl_exit sl_place_textures sl_movements
 SRCS = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 

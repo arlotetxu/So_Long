@@ -40,43 +40,33 @@
  *
  * -- PROXIMO --
  *
- *		# Comentarios en nuevas funciones para pintar el mapa
  *		# Comprobar que los ficheros xmp para poner las texturas no estan corruptos
  *		# Comenzar cpn movimientos
  *
  */
 
-void	ft_so_long(char **map)
+void	ft_so_long(t_general_p general_p)
 {
-//	void *mlx_ptr;
-//	void *mlx_win;
-	t_general_p	general_p;
+	//t_general_p	general_p;
 	t_image		img;
 
-//	mlx_ptr = mlx_init();
 	general_p.mlx_ptr = mlx_init();
-	img.img = mlx_xpm_file_to_image(general_p.mlx_ptr, "textures/grass_redim.xpm", &img.width_im, &img.height_im);
-	general_p.win_ptr = mlx_new_window(general_p.mlx_ptr, ft_map_size(map).x * img.width_im,
-									 ft_map_size(map).y * img.height_im, "JMF NEW WINDOW");
-	//mlx_win = mlx_new_window(mlx_ptr, width, height, "JMF NEW WINDOW"); //TODO Dimensionar la ventana acorde al numero de pixels a representar
-
-	//img.img = mlx_xpm_file_to_image(general_p.mlx_ptr, "textures/grass_redim.xpm", &img.width_im, &img.height_im);
-//	if (!img.img)
-//		printf ("Fallando\n");
-	//IMPRIMO LOS VALORES DE WIDTH Y HEIGHT DE LA IMAGEN PUESTA
-//	printf("Imagen width: %d\n", img.width_im);
-//	printf("Imagen height: %d\n", img.height_im);
-//	mlx_put_image_to_window(general_p.mlx_ptr, general_p.win_ptr, img.img, 0,0);
-//	mlx_put_image_to_window(general_p.mlx_ptr, general_p.win_ptr, img.img, 80,0);
-//	mlx_put_image_to_window(general_p.mlx_ptr, general_p.win_ptr, img.img, 160,0);
-	//ft_pass_image(map, general_p);
-	ft_pass_char(map, general_p);
+	// Dimensionamos la ventana
+	img.img = mlx_xpm_file_to_image(general_p.mlx_ptr, "textures/grass_redim.xpm",
+									&img.width_im,&img.height_im);
+	general_p.win_ptr = mlx_new_window(general_p.mlx_ptr,ft_map_size(general_p.map).x * img.width_im,
+									   ft_map_size(general_p.map).y * img.height_im, "POO");
+	// Pintamos el mapa en la ventana
+	ft_paint_map(general_p);
+	// Comenzamos con la captura de pulsaciones de teclas. 2 vias
+	//mlx_key_hook(general_p.win_ptr, ft_input_key, &general_p);
+	mlx_hook(general_p.win_ptr, 2, 1L<<0, ft_input_key, &general_p);
 	mlx_loop(general_p.mlx_ptr);
 }
 
 int	main(int argc, char **argv)
 {
-	char	**map_array;
+	t_general_p general;
 	int 	fd;
 
 	if (argc == 2)
@@ -84,19 +74,18 @@ int	main(int argc, char **argv)
 		fd = open(argv[1], O_RDONLY);
 		if (fd == -1)
 			return (perror("Error.\nChecking file"), 0);
-		map_array = ft_map_2_array(argv[1]);
-//		//METER LOS CONDICIONALES PARA EJECUCION DE LOS CHEQUEOS
+		general.map = ft_map_2_array(argv[1]);
 		if (ft_check_map_ext(argv[1]) == 0
-			|| ft_check_maps_rectangle(map_array) == 0
-			|| ft_check_map_leaks(map_array) == 0
-			|| ft_check_nostd_elements(map_array) == 0
-			|| ft_check_std_elements(map_array) == 0
-			|| ft_check_map_valid(map_array, ft_map_size(map_array)) == 0)
+			|| ft_check_maps_rectangle(general.map) == 0
+			|| ft_check_map_leaks(general.map) == 0
+			|| ft_check_nostd_elements(general.map) == 0
+			|| ft_check_std_elements(general.map) == 0
+			|| ft_check_map_valid(general.map, ft_map_size(general.map)) == 0)
 		{
-			ft_exiting(map_array);
+			ft_exiting(general.map);
 			return (0);
 		}
-		ft_so_long(map_array);
+		ft_so_long(general);
 	}
 	//ft_exiting(map_array);
 	//free(mlx_ptr);

@@ -18,16 +18,30 @@ void	ft_exiting(char **str)
 
 	i = 0;
 	while (str[i])
-		free(str[i++]);
+	{
+		free(str[i]);
+		i++;
+	}
 	free(str[i]);
 	free(str);
-	//printf("Exit (free) completado!!\n");
 }
 
 /*
- * EXITING WHEN ERROR
+ * #FT_CLOSE
+ * 		Frees the 2 dim arrays created and destroy the window
+ *
+ * #PARAMETER
+ * 		- char **map --> array to make the free process. The map converted to a char **
+ * 		- t_general_p --> All the pointers needed to run the mlx program
+ *
+ * #RETURN
+ * 		- 0
  */
-void	ft_error_exit(void)
+//int	ft_close(t_general_p general, char **map)
+int	ft_close(t_general_p *general)
 {
-	write(2, "Error\n", 6);
+	ft_exiting(general->map);
+	mlx_destroy_window(general->mlx_ptr, general->win_ptr);
+	free(general->mlx_ptr);
+	exit (0);
 }

@@ -3,6 +3,21 @@
 //
 #include "../inc/so_long.h"
 
+/*
+ * #FT_PLACE_TEXTURE
+ * 		The function receives the texture route and position vector
+ * 		    to place it in the window.
+ *
+ * #PARAMETERS
+ *		- char *texture --> route to each texture.
+ *		- t_general_p general_p -> struct with the needed program pointers
+ *		    (mlx_ptr & win_ptr)
+ *		- int x -> texture X position
+ *		- int y -> texture Y position
+ *
+ * #RETURN
+ * 		- Nothing.
+ */
 void	ft_place_texture(t_general_p general_p, char *texture, int x, int y)
 {
 	t_image	img_;
@@ -12,6 +27,21 @@ void	ft_place_texture(t_general_p general_p, char *texture, int x, int y)
 }
 
 
+/*
+ * #FT_PASS_IMAGE
+ * 		Receiving each map characters, determine the right texture and
+ * 		    call ft_place_texture to apply it on each position in the window.
+ *
+ * #PARAMETERS
+ *		- char map_char --> Each map character.
+ *		- t_general_p general_p -> struct with the needed program pointers
+ *		    (mlx_ptr & win_ptr)
+ *		- int x -> texture X position
+ *		- int y -> texture Y position
+ *
+ * #RETURN
+ * 		- Nothing.
+ */
 void	ft_pass_image(char map_char, t_general_p general_p, int x, int y)
 {
 	if (map_char == '1')
@@ -26,7 +56,46 @@ void	ft_pass_image(char map_char, t_general_p general_p, int x, int y)
 		ft_place_texture(general_p, EXIT, x, y);
 }
 
-void	ft_pass_char(char **map, t_general_p general_p)
+
+/*
+ * #FT_PASS_CHAR
+ * 		Get each map character and passes it to the function
+ * 		    ft_pass_image. Depending on the read character,
+ * 		    the ft_pass_image determine the route for the right
+ * 		    texture, what is placed with the function ft_place-texture
+ *
+ * #PARAMETERS
+ *		- char **map --> The map converted into a char **
+ *		- t_general_p general_p -> struct with the needed program pointers
+ *		    (mlx_ptr & win_ptr)
+ *
+ * #RETURN
+ * 		- Nothing.
+ */
+//void	ft_paint_map(char **map, t_general_p general_p)
+//{
+//	int	lines;
+//	int	cols;
+//	int	x;
+//	int	y;
+//
+//	lines = 0;
+//	y = 0;
+//	while (map[lines])
+//	{
+//		cols = 0;
+//		x = 0;
+//		while (map[lines][cols])
+//		{
+//			ft_pass_image(map[lines][cols], general_p, x, y);
+//			x = x + 80;
+//			cols++;
+//		}
+//		lines++;
+//		y = y + 80;
+//	}
+//}
+void	ft_paint_map(t_general_p general_p)
 {
 	int	lines;
 	int	cols;
@@ -35,13 +104,13 @@ void	ft_pass_char(char **map, t_general_p general_p)
 
 	lines = 0;
 	y = 0;
-	while (map[lines])
+	while (general_p.map[lines])
 	{
 		cols = 0;
 		x = 0;
-		while (map[lines][cols])
+		while (general_p.map[lines][cols])
 		{
-			ft_pass_image(map[lines][cols], general_p, x, y);
+			ft_pass_image(general_p.map[lines][cols], general_p, x, y);
 			x = x + 80;
 			cols++;
 		}

@@ -28,6 +28,7 @@ typedef struct	s_coord{
 typedef struct	s_general {
 	void	*mlx_ptr;
 	void	*win_ptr;
+	char	**map;
 }				t_general_p;
 
 // Struct to save all the data related to the images
@@ -58,13 +59,15 @@ char	**ft_dupli_map(char **map, t_coord size);
 int		ft_check_map_valid(char **map, t_coord size);
 int		ft_check_map_ext(char *map_route);
 //CREATING THE WINDOW & IMAGES
-void	ft_so_long(char **map);
-void	ft_pass_char(char **map, t_general_p general_p);
+void	ft_so_long(t_general_p general_p);
+void	ft_paint_map(t_general_p general_p);
 void	ft_pass_image(char map_char, t_general_p general_p, int x, int y);
 void	ft_place_texture(t_general_p general_p, char *texture, int x, int y);
+//MOVEMENTS
+int		ft_input_key(int key_num, t_general_p *general);
 
 //EXIT
 void	ft_exiting(char **str);
-void	ft_error_exit(void);
+int		ft_close(t_general_p *general);
 
 #endif //SO_LONG_H
