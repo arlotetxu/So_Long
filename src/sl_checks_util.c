@@ -20,11 +20,9 @@ int	ft_check_maps_rectangle(char **map)
 {
 	t_coord	map_size;
 	int		lines;
-	int 	cols;
+	int		cols;
 
 	map_size = ft_map_size(map);
-//	printf("Map_size.x - colums en ft_check_maps_rectangle: %d\n", map_size.x);
-//	printf("Map_size.y - rows en ft_check_maps_rectangle: %d\n", map_size.y);
 	lines = 0;
 	while (map[lines])
 	{
@@ -67,10 +65,7 @@ int	ft_check_map_leaks(char **map)
 	i = 0;
 	while (++i < lines)
 		if (map[i][0] != '1' || map[i][chars - 1] != '1')
-		{
-
 			return (perror("Error.\nThe map is not closed"), 0);
-		}
 	return (1);
 }
 
@@ -89,14 +84,17 @@ int	ft_check_map_leaks(char **map)
  * 		- 1 if the .ber is OK.
  */
 
-int	ft_check_std_elements(char **map)
+int	ft_check_std_elements(char **map) //TODO Funcion con mas de 25 lineas. Segmentar
 {
 	int	lines;
 	int	i;
-	int	count_c = 0;
-	int	count_e = 0;
-	int	count_p = 0;
+	int	count_c;
+	int	count_e;
+	int	count_p;
 
+	count_c = 0;
+	count_e = 0;
+	count_p = 0;
 	lines = ft_map_size(map).y - 1;
 	while (lines >= 0)
 	{

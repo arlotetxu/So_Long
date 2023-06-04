@@ -10,7 +10,7 @@
  *
  * #PARAMETERS
  *		- char *texture --> route to each texture.
- *		- t_general_p general_p -> struct with the needed program pointers
+ *		- t_gen_p general_p -> struct with the needed program pointers
  *		    (mlx_ptr & win_ptr)
  *		- int x -> texture X position
  *		- int y -> texture Y position
@@ -18,7 +18,7 @@
  * #RETURN
  * 		- Nothing.
  */
-void	ft_place_texture(t_general_p general_p, char *texture, int x, int y)
+void	ft_place_texture(t_gen_p general_p, char *texture, int x, int y)
 {
 	t_image	img_;
 
@@ -34,7 +34,7 @@ void	ft_place_texture(t_general_p general_p, char *texture, int x, int y)
  *
  * #PARAMETERS
  *		- char map_char --> Each map character.
- *		- t_general_p general_p -> struct with the needed program pointers
+ *		- t_gen_p general_p -> struct with the needed program pointers
  *		    (mlx_ptr & win_ptr)
  *		- int x -> texture X position
  *		- int y -> texture Y position
@@ -42,7 +42,7 @@ void	ft_place_texture(t_general_p general_p, char *texture, int x, int y)
  * #RETURN
  * 		- Nothing.
  */
-void	ft_pass_image(char map_char, t_general_p general_p, int x, int y)
+void	ft_pass_image(char map_char, t_gen_p general_p, int x, int y)
 {
 	if (map_char == '1')
 		ft_place_texture(general_p, WALL, x, y);
@@ -66,36 +66,13 @@ void	ft_pass_image(char map_char, t_general_p general_p, int x, int y)
  *
  * #PARAMETERS
  *		- char **map --> The map converted into a char **
- *		- t_general_p general_p -> struct with the needed program pointers
+ *		- t_gen_p general_p -> struct with the needed program pointers
  *		    (mlx_ptr & win_ptr)
  *
  * #RETURN
  * 		- Nothing.
  */
-//void	ft_paint_map(char **map, t_general_p general_p)
-//{
-//	int	lines;
-//	int	cols;
-//	int	x;
-//	int	y;
-//
-//	lines = 0;
-//	y = 0;
-//	while (map[lines])
-//	{
-//		cols = 0;
-//		x = 0;
-//		while (map[lines][cols])
-//		{
-//			ft_pass_image(map[lines][cols], general_p, x, y);
-//			x = x + 80;
-//			cols++;
-//		}
-//		lines++;
-//		y = y + 80;
-//	}
-//}
-void	ft_paint_map(t_general_p general_p)
+void	ft_paint_map(t_gen_p general_p)
 {
 	int	lines;
 	int	cols;

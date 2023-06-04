@@ -2,9 +2,6 @@
 
 #include "../inc/so_long.h"
 
-# define width 800
-# define height 600
-
 /*
  * ---- STATUS ----
  *
@@ -33,9 +30,12 @@
  * 		# Creada funcion para comprobar si la extension del mapa es .ber
  * 			sl_checks_util_2.c -> int	ft_check_map_ext(char *map_route)
  * 		# Creadas funciones para pintar el mapa
- * 			sl_place_textures.c -> void	ft_pass_char(char **map, t_general_p general_p)
- * 			sl_place_textures.c -> void	ft_pass_image(char map_char, t_general_p general_p, int x, int y)
- * 			sl_place_textures.c -> void	ft_place_texture(t_general_p general_p, char *texture, int x, int y)
+ * 			sl_place_textures.c -> void	ft_pass_char(char **map, t_gen_p
+ general_p)
+ * 			sl_place_textures.c -> void	ft_pass_image(char map_char, t_gen_p
+ general_p, int x, int y)
+ * 			sl_place_textures.c -> void	ft_place_texture(t_gen_p
+ general_p, char *texture, int x, int y)
  *
  *
  * -- PROXIMO --
@@ -45,29 +45,29 @@
  *
  */
 
-void	ft_so_long(t_general_p general_p)
+void	ft_so_long(t_gen_p general_p)
 {
-	//t_general_p	general_p;
 	t_image		img;
 
 	general_p.mlx_ptr = mlx_init();
 	// Dimensionamos la ventana
-	img.img = mlx_xpm_file_to_image(general_p.mlx_ptr, "textures/grass_redim.xpm",
-									&img.width_im,&img.height_im);
-	general_p.win_ptr = mlx_new_window(general_p.mlx_ptr,ft_map_size(general_p.map).x * img.width_im,
-									   ft_map_size(general_p.map).y * img.height_im, "POO");
+	img.img = mlx_xpm_file_to_image(general_p.mlx_ptr,
+			"textures/grass_redim.xpm",&img.width_im,&img.height_im);
+	general_p.win_ptr = mlx_new_window(general_p.mlx_ptr,
+			ft_map_size(general_p.map).x * img.width_im,
+			ft_map_size(general_p.map).y * img.height_im, "POO");
 	// Pintamos el mapa en la ventana
 	ft_paint_map(general_p);
 	// Comenzamos con la captura de pulsaciones de teclas. 2 vias
 	//mlx_key_hook(general_p.win_ptr, ft_input_key, &general_p);
-	mlx_hook(general_p.win_ptr, 2, 1L<<0, ft_input_key, &general_p);
+	mlx_hook(general_p.win_ptr, 2, 1L << 0, ft_input_key, &general_p);
 	mlx_loop(general_p.mlx_ptr);
 }
 
 int	main(int argc, char **argv)
 {
-	t_general_p general;
-	int 	fd;
+	t_gen_p	general;
+	int		fd;
 
 	if (argc == 2)
 	{
@@ -87,8 +87,8 @@ int	main(int argc, char **argv)
 		}
 		ft_so_long(general);
 	}
-	//ft_exiting(map_array);
-	//free(mlx_ptr);
+	ft_exiting(general.map);
+	free(general.mlx_ptr);
 	return (0);
 }
 

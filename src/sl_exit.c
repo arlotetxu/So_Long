@@ -32,13 +32,13 @@ void	ft_exiting(char **str)
  *
  * #PARAMETER
  * 		- char **map --> array to make the free process. The map converted to a char **
- * 		- t_general_p --> All the pointers needed to run the mlx program
+ * 		- t_gen_p --> All the pointers needed to run the mlx program
  *
  * #RETURN
  * 		- 0
  */
-//int	ft_close(t_general_p general, char **map)
-int	ft_close(t_general_p *general)
+//int	ft_close(t_gen_p general, char **map)
+int	ft_close(t_gen_p *general)
 {
 	ft_exiting(general->map);
 	mlx_destroy_window(general->mlx_ptr, general->win_ptr);

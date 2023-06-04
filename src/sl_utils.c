@@ -113,3 +113,23 @@ t_coord	ft_start_posit(char **map)
 	}
 	return (start_coor);
 }
+
+int	ft_count_c(char **map)
+{
+	int	lines;
+	int	cols;
+	int	count;
+
+	lines = -1;
+	count = 0;
+	while (map && map[++lines])
+	{
+		cols = -1;
+		while (map[lines][++cols])
+		{
+			if (map[lines][cols] == 'c' || map[lines][cols] == 'C')
+				count++;
+		}
+	}
+	return (count);
+}
