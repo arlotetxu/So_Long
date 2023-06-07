@@ -36,12 +36,21 @@
  general_p, int x, int y)
  * 			sl_place_textures.c -> void	ft_place_texture(t_gen_p
  general_p, char *texture, int x, int y)
+ *		# Creadas las funciones para hacer los movimientos
+ *			so_long.c -> mlx_hook(general_p.win_ptr, 2, 1L << 0, ft_input_key, &general_p)
+ *			sl_movements.c -> void	ft_do_mov(t_coord prev_coord, t_coord next_coord, t_gen_p general)
+ *			sl_movements.c -> int	ft_check_map_value(t_coord prev_coord, t_coord next_coord, t_gen_p general)
+ *			sl_movements.c -> int	ft_check_mov(int key_num, t_gen_p general)
+ *			sl_movements.c -> int	ft_input_key(int key_num, t_gen_p *general)
  *
  *
  * -- PROXIMO --
  *
+ *		# No se muestra nada cuando se clica en la X de la ventana
  *		# Comprobar que los ficheros xmp para poner las texturas no estan corruptos
- *		# Comenzar cpn movimientos
+ *		# Integrar la ft_printf para imprimir mensajes
+ *		# Añadir las cabeceras
+ *		# Comprobar el leak que se produce con el fsanitize
  *
  */
 
