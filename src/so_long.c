@@ -42,11 +42,12 @@
  *			sl_movements.c -> int	ft_check_map_value(t_coord prev_coord, t_coord next_coord, t_gen_p general)
  *			sl_movements.c -> int	ft_check_mov(int key_num, t_gen_p general)
  *			sl_movements.c -> int	ft_input_key(int key_num, t_gen_p *general)
+ *		# Creada llamada a evento a close cuando se clicka en la x de la ventana
+ *
  *
  *
  * -- PROXIMO --
  *
- *		# No se muestra nada cuando se clica en la X de la ventana
  *		# Comprobar que los ficheros xmp para poner las texturas no estan corruptos
  *		# Integrar la ft_printf para imprimir mensajes
  *		# Añadir las cabeceras
@@ -70,6 +71,7 @@ void	ft_so_long(t_gen_p general_p)
 	// Comenzamos con la captura de pulsaciones de teclas. 2 vias
 	//mlx_key_hook(general_p.win_ptr, ft_input_key, &general_p);
 	mlx_hook(general_p.win_ptr, 2, 1L << 0, ft_input_key, &general_p);
+	mlx_hook(general_p.win_ptr, 17, 1L << 17, ft_close, &general_p);
 	mlx_loop(general_p.mlx_ptr);
 }
 

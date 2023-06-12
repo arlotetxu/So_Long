@@ -3,6 +3,18 @@
 //
 #include "../inc/so_long.h"
 
+/*
+ * #FT_DO_MOV
+ * 		The function does the movement
+ *
+ * #PARAMETER
+ * 		- t_coord prev_coord -> The initial vector.
+ * 		- t_coord next_coord -> The vector to do the movement.
+ * 		- t_gen_p *general --> Pointer to program data.
+ *
+ * #RETURN
+ *
+ */
 void	ft_do_mov(t_coord prev_coord, t_coord next_coord, t_gen_p general)
 {
 	general.map[prev_coord.y][prev_coord.x] = '0';
@@ -10,6 +22,19 @@ void	ft_do_mov(t_coord prev_coord, t_coord next_coord, t_gen_p general)
 	ft_paint_map(general);
 }
 
+/*
+ * #FT_CHECK_MAP_VALUE
+ * 		The function checks the map value to do the movement
+ *
+ * #PARAMETER
+ * 		- t_coord prev_coord -> The initial vector.
+ * 		- t_coord next_coord -> The vector to do the movement.
+ * 		- t_gen_p *general --> Pointer to program data.
+ *
+ * #RETURN
+ * 		- 1 if the movement is possible (next map value are 0 or c/C)
+ * 		- 0 if the movement is not possible.
+ */
 int	ft_check_map_value(t_coord prev_coord, t_coord next_coord, t_gen_p general)
 {
 	char	map_value;
@@ -25,6 +50,20 @@ int	ft_check_map_value(t_coord prev_coord, t_coord next_coord, t_gen_p general)
 	return (0);
 }
 
+/*
+ * #FT_CHECK_MOV
+ * 		The function checks through the function ft_check_map_value if the
+ * 		movement is valid or, otherwise it is not possible because we have a
+ * 		wall (1 in the map).
+ *
+ * #PARAMETER
+ * 		- int key_num -> The key pressed.
+ * 		- t_gen_p *general --> Pointer to program data.
+ *
+ * #RETURN
+ * 		- check_print ->	1 if the movement is possible.
+ * 							0 if the movement is not possible.
+ */
 int	ft_check_mov(int key_num, t_gen_p general)
 {
 	t_coord	start_p;
@@ -46,6 +85,19 @@ int	ft_check_mov(int key_num, t_gen_p general)
 	return (check_print);
 }
 
+/*
+ * #FT_INPUT_KEY
+ * 		The function captures the key pressed by the user. If the key is
+ * 		up / down / left / right, the function checks if the movement is
+ * 		possible through the function ft_check_move & ft_check_map_value.
+ *
+ * #PARAMETER
+ * 		- int key_num -> The key pressed.
+ * 		- t_gen_p *general --> Pointer to program data
+ *
+ * #RETURN
+ * 		- 0 at the program exit
+ */
 int	ft_input_key(int key_num, t_gen_p *general)
 {
 	int			check_move;
@@ -69,7 +121,7 @@ int	ft_input_key(int key_num, t_gen_p *general)
 			check_move = ft_check_mov(key_num, *general);
 		if (check_move == 1)
 			count++;
-		printf("Num_mov: %d -- Key: %d\n", count, key_num); //TODO no permitido el printf
+		printf("Mov_number: %d -- Key_press: %d\n", count, key_num); //TODO no permitido el printf
 	}
 	return (0);
 }

@@ -37,7 +37,6 @@ void	ft_exiting(char **str)
  * #RETURN
  * 		- 0
  */
-//int	ft_close(t_gen_p general, char **map)
 int	ft_close(t_gen_p *general)
 {
 	ft_exiting(general->map);
