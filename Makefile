@@ -55,6 +55,7 @@ MLX			=	-Lmlx -lmlx -framework OpenGL -framework AppKit
 
 LIBFT_a 	= 	libft/libft.a
 GNL_a		=	Get_Next_line/ft_gnl.a
+FT_PRINTF_a	=	ft_printf/libftprintf.a
 MLX_a		=	mlx/libmlx.a
 
 #OBJS 		= 	$(SRC:.c=.o)
@@ -79,8 +80,9 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@$(MAKE) -C ./libft
 	@$(MAKE) -C ./Get_Next_line
+	@$(MAKE) -C ./ft_printf
 	@$(MAKE) -C ./mlx
-	@$(CC) $(CFLAGS) $(OBJS) -I $(INC) $(LIBFT_a) $(GNL_a) $(MLX_a) $(MLX) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) -I $(INC) $(LIBFT_a) $(GNL_a) $(FT_PRINTF_a) $(MLX_a) $(MLX) -o $(NAME)
 	@echo "$(GREEN)$$HEADER$(DEF_COLOR)"
 	@echo "$(GREEN)So_Long compiled!$(DEF_COLOR)"
 

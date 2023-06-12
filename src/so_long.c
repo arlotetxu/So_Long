@@ -43,16 +43,16 @@
  *			sl_movements.c -> int	ft_check_mov(int key_num, t_gen_p general)
  *			sl_movements.c -> int	ft_input_key(int key_num, t_gen_p *general)
  *		# Creada llamada a evento a close cuando se clicka en la x de la ventana
+ *		# Integrado el programa ft_printf para realizar las impresiones de texto en pantalla
  *
  *
  *
  * -- PROXIMO --
  *
  *		# Comprobar que los ficheros xmp para poner las texturas no estan corruptos
- *		# Integrar la ft_printf para imprimir mensajes
  *		# Añadir las cabeceras
  *		# Comprobar el leak que se produce con el fsanitize
- *
+ *		# norminette
  */
 
 void	ft_so_long(t_gen_p general_p)

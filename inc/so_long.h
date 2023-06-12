@@ -11,6 +11,7 @@
 # include "../mlx/mlx.h"
 # include "../Get_Next_line/get_next_line.h"
 # include "../libft/libft.h"
+# include "../ft_printf/ft_printf.h"
 
 typedef struct	s_window {
 	int		width_win;

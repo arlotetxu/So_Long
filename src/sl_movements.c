@@ -121,7 +121,7 @@ int	ft_input_key(int key_num, t_gen_p *general)
 			check_move = ft_check_mov(key_num, *general);
 		if (check_move == 1)
 			count++;
-		printf("Mov_number: %d -- Key_press: %d\n", count, key_num); //TODO no permitido el printf
+		ft_printf("Mov_number: %d -- Key_press: %d\n", count, key_num);
 	}
 	return (0);
 }
