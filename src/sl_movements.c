@@ -1,6 +1,15 @@
-//
-// Created by Jose Manuel Florido Perena on 6/2/23.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sl_movements.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jflorido <jflorido@student.42urduliz.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/13 19:06:26 by jflorido          #+#    #+#             */
+/*   Updated: 2023/06/13 19:07:01 by jflorido         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/so_long.h"
 
 /*
@@ -45,7 +54,8 @@ int	ft_check_map_value(t_coord prev_coord, t_coord next_coord, t_gen_p general)
 		ft_do_mov(prev_coord, next_coord, general);
 		return (1);
 	}
-	else if ((map_value == 'e' || map_value == 'E') && ft_count_c(general.map) == 0)
+	else if ((map_value == 'e' || map_value == 'E')
+		&& ft_count_c(general.map) == 0)
 		ft_close(&general);
 	return (0);
 }

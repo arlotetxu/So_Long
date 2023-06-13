@@ -1,6 +1,15 @@
-//
-// Created by Jose Manuel Florido Perena on 5/27/23.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sl_place_textures.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jflorido <jflorido@student.42urduliz.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/13 19:07:27 by jflorido          #+#    #+#             */
+/*   Updated: 2023/06/13 19:09:04 by jflorido         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/so_long.h"
 
 /*
@@ -22,8 +31,10 @@ void	ft_place_texture(t_gen_p general_p, char *texture, int x, int y)
 {
 	t_image	img_;
 
-	img_.img = mlx_xpm_file_to_image(general_p.mlx_ptr, texture, &img_.width_im, &img_.height_im);
-	mlx_put_image_to_window(general_p.mlx_ptr, general_p.win_ptr, img_.img, x, y);
+	img_.img = mlx_xpm_file_to_image(general_p.mlx_ptr, texture,
+			&img_.width_im, &img_.height_im);
+	mlx_put_image_to_window(general_p.mlx_ptr, general_p.win_ptr,
+		img_.img, x, y);
 }
 
 

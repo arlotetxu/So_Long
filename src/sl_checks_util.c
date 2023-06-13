@@ -1,6 +1,15 @@
-//
-// Created by Jose Manuel Florido Perena on 5/12/23.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sl_checks_util.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jflorido <jflorido@student.42urduliz.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/13 19:03:00 by jflorido          #+#    #+#             */
+/*   Updated: 2023/06/13 19:05:25 by jflorido         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/so_long.h"
 
 /*
@@ -84,7 +93,7 @@ int	ft_check_map_leaks(char **map)
  * 		- 1 if the .ber is OK.
  */
 
-int	ft_check_std_elements(char **map) //TODO Funcion con mas de 25 lineas. Segmentar
+int	ft_check_std_elements(char **map) //TODO funcion con mas de 25 lineas
 {
 	int	lines;
 	int	i;
@@ -130,8 +139,8 @@ int	ft_check_std_elements(char **map) //TODO Funcion con mas de 25 lineas. Segme
 
 int	ft_check_nostd_elements(char **map)
 {
-	int	lines;
-	int	i;
+	int		lines;
+	int		i;
 	t_coord	map_size;
 
 	map_size = ft_map_size(map);

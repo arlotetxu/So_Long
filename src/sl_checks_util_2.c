@@ -1,6 +1,15 @@
-//
-// Created by Jose Manuel Florido Pereña on 20/5/23.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sl_checks_util_2.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jflorido <jflorido@student.42urduliz.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/13 19:00:58 by jflorido          #+#    #+#             */
+/*   Updated: 2023/06/13 19:02:42 by jflorido         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/so_long.h"
 
 /*
@@ -16,9 +25,9 @@
  */
 char	**ft_dupli_map(char **map, t_coord size)
 {
-	char **copy_map;
-	int i;
-	int j;
+	char	**copy_map;
+	int		i;
+	int		j;
 
 	copy_map = malloc(sizeof(char *) * size.y + 1);
 	if (copy_map == NULL)
@@ -32,12 +41,6 @@ char	**ft_dupli_map(char **map, t_coord size)
 			copy_map[i][j] = map[i][j];
 		copy_map[i][size.x] = '\0';
 	}
-//	for (int i = 0; i < size.y; ++i)
-//		printf("%s", map[i]);
-//	printf("---------------------------\n");
-//	for (int i = 0; i < size.y; ++i)
-//		printf("%s\n", copy_map[i]);
-//	printf("\n");
 	return (copy_map);
 }
 
@@ -93,16 +96,7 @@ char	**ft_flood_fill(char **map)
 	map_copy = ft_dupli_map(map, ft_map_size(map));
 	map_size = ft_map_size(map_copy);
 	start_p = ft_start_posit(map_copy);
-//	printf("-----------ORIGINAL----------------\n");
-//	for (int i = 0; i < map_size.y; ++i)
-//		printf("%s\n", map[i]);
-//	printf("------------COPIA---------------\n");
-//	for (int i = 0; i < map_size.y; ++i)
-//		printf("%s\n", map_copy[i]);
 	ft_fill_map(map_copy, map_size, start_p);
-//	printf("------------COPIA MODIF---------------\n");
-//	for (int i = 0; i < map_size.y; ++i)
-//		printf("%s\n", map_copy[i]);
 	return (map_copy);
 }
 
@@ -138,7 +132,8 @@ int	ft_check_map_valid(char **map, t_coord size)
 		while (++cols < size.x)
 		{
 			if (copy_map2[lines][cols] == 'c' || copy_map2[lines][cols] == 'C'
-				|| copy_map2[lines][cols] == 'e' || copy_map2[lines][cols] == 'E')
+				|| copy_map2[lines][cols] == 'e'
+				|| copy_map2[lines][cols] == 'E')
 				count++;
 		}
 		lines++;
@@ -164,8 +159,8 @@ int	ft_check_map_valid(char **map, t_coord size)
 
 int	ft_check_map_ext(char *map_route)
 {
-	int i;
-	int j;
+	int		i;
+	int		j;
 	char	*ref;
 
 	ref = ".ber";

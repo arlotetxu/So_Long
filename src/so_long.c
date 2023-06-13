@@ -1,4 +1,14 @@
-//Header
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jflorido <jflorido@student.42urduliz.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/13 19:13:52 by jflorido          #+#    #+#             */
+/*   Updated: 2023/06/13 19:14:26 by jflorido         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
@@ -44,13 +54,13 @@
  *			sl_movements.c -> int	ft_input_key(int key_num, t_gen_p *general)
  *		# Creada llamada a evento a close cuando se clicka en la x de la ventana
  *		# Integrado el programa ft_printf para realizar las impresiones de texto en pantalla
+ *		# Cabeceras añadidas
  *
  *
  *
  * -- PROXIMO --
  *
- *		# Comprobar que los ficheros xmp para poner las texturas no estan corruptos
- *		# Añadir las cabeceras
+ *		# Comprobar que los ficheros xmp para poner las texturas no estan corruptosbeceras
  *		# Comprobar el leak que se produce con el fsanitize
  *		# norminette
  */

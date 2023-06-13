@@ -1,6 +1,15 @@
-//
-// Created by Jose Manuel Florido Pereña on 21/5/23.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sl_utils.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jflorido <jflorido@student.42urduliz.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/13 19:09:16 by jflorido          #+#    #+#             */
+/*   Updated: 2023/06/13 19:13:12 by jflorido         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/so_long.h"
 
 /*
@@ -15,8 +24,7 @@
  * #RETURN
  * 		- The program return the bidimensional array.
  */
-
-char	**ft_map_2_array(char *map_route)
+char	**ft_map_2_array(char *map_route) //TODO funcion con mas de 25 lineas
 {
 	int		fd;
 	char	**map;
@@ -48,6 +56,7 @@ char	**ft_map_2_array(char *map_route)
 	return (map);
 }
 
+
 /*
  * #FT_MAP_SIZE
  * 		Get the map size in x & y values
@@ -58,23 +67,19 @@ char	**ft_map_2_array(char *map_route)
  * #RETURN
  * 		- The map size expressed in x (columns) & y (rows) values.
  */
-
 t_coord	ft_map_size(char **map)
 {
 	t_coord	map_size;
-	//int	cols;
-	int	lines;
+	int		lines;
 
 	lines = 0;
-	//cols = 0;
 	while (map && map[lines] != NULL)
 		lines++;
 	map_size.x = ft_strlen(map[0]);
 	map_size.y = lines;
-//	printf("map_size.x en ft_map_size: %d\n", map_size.x);
-//	printf("map_size.y en ft_map_size: %d\n", map_size.y);
 	return (map_size);
 }
+
 
 /*
  * #FT_START_POSIT
@@ -86,7 +91,6 @@ t_coord	ft_map_size(char **map)
  * #RETURN
  * 		- a t_coord with the position of the 'P' or 'p' in coordinates.
  */
-
 t_coord	ft_start_posit(char **map)
 {
 	t_coord	start_coor;
@@ -114,6 +118,17 @@ t_coord	ft_start_posit(char **map)
 	return (start_coor);
 }
 
+
+/*
+ * #FT_COUNT_C
+ * 		Get the count of c/C characters within the map
+ *
+ * #PARAMETERS
+ *		- char **map --> The map converted into a char **
+ *
+ * #RETURN
+ * 		- count -> the count of the mentioned character.
+ */
 int	ft_count_c(char **map)
 {
 	int	lines;

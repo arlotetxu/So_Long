@@ -1,6 +1,15 @@
-//
-// Created by Jose Manuel Florido Pereña on 14/5/23.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sl_exit.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jflorido <jflorido@student.42urduliz.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/13 19:05:41 by jflorido          #+#    #+#             */
+/*   Updated: 2023/06/13 19:06:07 by jflorido         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/so_long.h"
 
 /*
@@ -31,7 +40,8 @@ void	ft_exiting(char **str)
  * 		Frees the 2 dim arrays created and destroy the window
  *
  * #PARAMETER
- * 		- char **map --> array to make the free process. The map converted to a char **
+ * 		- char **map --> array to make the free process.
+ * 						The map converted to a char **
  * 		- t_gen_p --> All the pointers needed to run the mlx program
  *
  * #RETURN
