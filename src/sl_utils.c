@@ -56,7 +56,6 @@ char	**ft_map_2_array(char *map_route) //TODO funcion con mas de 25 lineas
 	return (map);
 }
 
-
 /*
  * #FT_MAP_SIZE
  * 		Get the map size in x & y values
@@ -80,7 +79,6 @@ t_coord	ft_map_size(char **map)
 	return (map_size);
 }
 
-
 /*
  * #FT_START_POSIT
  * 		Get the position of the player starting point
@@ -94,8 +92,8 @@ t_coord	ft_map_size(char **map)
 t_coord	ft_start_posit(char **map)
 {
 	t_coord	start_coor;
-	int				lines;
-	int				cols;
+	int		lines;
+	int		cols;
 
 	lines = 0;
 	start_coor.x = 0;
@@ -117,7 +115,6 @@ t_coord	ft_start_posit(char **map)
 	}
 	return (start_coor);
 }
-
 
 /*
  * #FT_COUNT_C

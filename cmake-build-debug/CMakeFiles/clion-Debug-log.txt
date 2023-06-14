@@ -1,1 +1,1 @@
-CMakeLists.txt not found in /Users/jflorido/Documents/42_Cursus/So_Long Select CMakeLists.txt
+CMakeLists.txt not found in /Users/arlo/Documents/Mis_Proyectos/42_cursus/So_Long Select CMakeLists.txt

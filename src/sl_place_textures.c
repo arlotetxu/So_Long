@@ -37,7 +37,6 @@ void	ft_place_texture(t_gen_p general_p, char *texture, int x, int y)
 		img_.img, x, y);
 }
 
-
 /*
  * #FT_PASS_IMAGE
  * 		Receiving each map characters, determine the right texture and
@@ -66,7 +65,6 @@ void	ft_pass_image(char map_char, t_gen_p general_p, int x, int y)
 	else if (map_char == 'e' || map_char == 'E')
 		ft_place_texture(general_p, EXIT, x, y);
 }
-
 
 /*
  * #FT_PASS_CHAR

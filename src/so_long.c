@@ -70,16 +70,12 @@ void	ft_so_long(t_gen_p general_p)
 	t_image		img;
 
 	general_p.mlx_ptr = mlx_init();
-	// Dimensionamos la ventana
 	img.img = mlx_xpm_file_to_image(general_p.mlx_ptr,
 			"textures/grass_redim.xpm",&img.width_im,&img.height_im);
 	general_p.win_ptr = mlx_new_window(general_p.mlx_ptr,
 			ft_map_size(general_p.map).x * img.width_im,
 			ft_map_size(general_p.map).y * img.height_im, "POO");
-	// Pintamos el mapa en la ventana
 	ft_paint_map(general_p);
-	// Comenzamos con la captura de pulsaciones de teclas. 2 vias
-	//mlx_key_hook(general_p.win_ptr, ft_input_key, &general_p);
 	mlx_hook(general_p.win_ptr, 2, 1L << 0, ft_input_key, &general_p);
 	mlx_hook(general_p.win_ptr, 17, 1L << 17, ft_close, &general_p);
 	mlx_loop(general_p.mlx_ptr);
