@@ -14,6 +14,7 @@
 # define FT_PRINTF_H
 # include <stdarg.h>
 # include <unistd.h>
+# include "../libft/libft.h"
 
 //put your function headers here
 int	ft_printf(const char *str, ...);
@@ -22,5 +23,6 @@ int	ft_putstr(char *str);
 int	ft_putnbr(int nbr);
 int	ft_puthexa(unsigned long int nbr, char m);
 int	ft_putnbr_u(unsigned int nbr);
+int	ft_strlen_printf(char *str);
 
 #endif

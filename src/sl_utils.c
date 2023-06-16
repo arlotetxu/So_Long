@@ -37,8 +37,8 @@ char	**ft_map_2_array(char *map_route) //TODO funcion con mas de 25 lineas
 	fd = open(map_route, O_RDONLY);
 	if (fd == -1)
 		return (NULL);
-	else
-	{
+	//else
+	//{
 		while (get_next_line(fd))
 			lines++;
 		close(fd);
@@ -52,7 +52,7 @@ char	**ft_map_2_array(char *map_route) //TODO funcion con mas de 25 lineas
 		}
 		map[i] = NULL;
 		close(fd);
-	}
+	//}
 	return (map);
 }
 
@@ -126,7 +126,31 @@ t_coord	ft_start_posit(char **map)
  * #RETURN
  * 		- count -> the count of the mentioned character.
  */
-int	ft_count_c(char **map)
+//int	ft_count_c(char **map)
+//{
+//	int	lines;
+//	int	cols;
+//	int	count;
+//
+//	lines = -1;
+//	count = 0;
+//	while (map && map[++lines])
+//	{
+//		cols = -1;
+//		while (map[lines][++cols])
+//		{
+//			if (map[lines][cols] == 'c' || map[lines][cols] == 'C')
+//				count++;
+//		}
+//	}
+//	return (count);
+//}
+
+/*
+ * FT_COUNT_ELEM(char **map)
+ */
+
+int ft_count_elem(char **map, char elem, char elem2)
 {
 	int	lines;
 	int	cols;
@@ -139,7 +163,7 @@ int	ft_count_c(char **map)
 		cols = -1;
 		while (map[lines][++cols])
 		{
-			if (map[lines][cols] == 'c' || map[lines][cols] == 'C')
+			if (map[lines][cols] == elem || map[lines][cols] == elem2)
 				count++;
 		}
 	}

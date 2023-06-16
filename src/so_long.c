@@ -70,11 +70,11 @@ void	ft_so_long(t_gen_p general_p)
 	t_image		img;
 
 	general_p.mlx_ptr = mlx_init();
-	img.img = mlx_xpm_file_to_image(general_p.mlx_ptr,
+	img.img = mlx_xpm_file_to_image (general_p.mlx_ptr,
 			"textures/grass_redim.xpm",&img.width_im,&img.height_im);
-	general_p.win_ptr = mlx_new_window(general_p.mlx_ptr,
-			ft_map_size(general_p.map).x * img.width_im,
-			ft_map_size(general_p.map).y * img.height_im, "POO");
+	general_p.win_ptr = mlx_new_window (general_p.mlx_ptr,
+			ft_map_size (general_p.map).x * img.width_im,
+			ft_map_size (general_p.map).y * img.height_im, "WINNING THE POO");
 	ft_paint_map(general_p);
 	mlx_hook(general_p.win_ptr, 2, 1L << 0, ft_input_key, &general_p);
 	mlx_hook(general_p.win_ptr, 17, 1L << 17, ft_close, &general_p);

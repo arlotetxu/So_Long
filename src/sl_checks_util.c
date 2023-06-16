@@ -93,32 +93,45 @@ int	ft_check_map_leaks(char **map)
  * 		- 1 if the .ber is OK.
  */
 
-int	ft_check_std_elements(char **map) //TODO funcion con mas de 25 lineas
+//int	ft_check_std_elements(char **map)
+//{
+//	int	lines;
+//	int	i;
+//	int	count_c;
+//	int	count_e;
+//	int	count_p;
+//
+//	count_c = 0;
+//	count_e = 0;
+//	count_p = 0;
+//	lines = ft_map_size(map).y;
+//	while (--lines >= 0)
+//	{
+//		i = -1;
+//		while (map[lines][++i])
+//		{
+//			if (map[lines][i] == 'c' || map[lines][i] == 'C')
+//				count_c++;
+//			else if (map[lines][i] == 'e' || map[lines][i] == 'E')
+//				count_e++;
+//			else if (map[lines][i] == 'p' || map[lines][i] == 'P')
+//				count_p++;
+//		}
+//	}
+//	if (count_c < 1 || count_e != 1 || count_p != 1)
+//		return (perror("Error.\nNumber of elements incorrect"), 0);
+//	return (1);
+//}
+int	ft_check_std_elements(char **map)
 {
-	int	lines;
-	int	i;
 	int	count_c;
 	int	count_e;
 	int	count_p;
 
-	count_c = 0;
-	count_e = 0;
-	count_p = 0;
-	lines = ft_map_size(map).y - 1;
-	while (lines >= 0)
-	{
-		i = -1;
-		while (map[lines][++i])
-		{
-			if (map[lines][i] == 'c' || map[lines][i] == 'C')
-				count_c++;
-			else if (map[lines][i] == 'e' || map[lines][i] == 'E')
-				count_e++;
-			else if (map[lines][i] == 'p' || map[lines][i] == 'P')
-				count_p++;
-		}
-		lines--;
-	}
+	count_c = ft_count_elem(map, 'c', 'C');
+	count_e = ft_count_elem(map, 'e', 'E');
+	count_p = ft_count_elem(map, 'p', 'P');
+
 	if (count_c < 1 || count_e != 1 || count_p != 1)
 		return (perror("Error.\nNumber of elements incorrect"), 0);
 	return (1);

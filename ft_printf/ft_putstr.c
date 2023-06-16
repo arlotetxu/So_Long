@@ -19,7 +19,7 @@ int	ft_putstr(char *str)
 
 	if (str == NULL)
 		return (ft_putstr("(null)"));
-	len = ft_strlen(str);
+	len = ft_strlen_printf(str);
 	i = 0;
 	while (str[i] != '\0')
 	{

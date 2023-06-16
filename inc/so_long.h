@@ -49,7 +49,8 @@ typedef struct	s_image {
 char	**ft_map_2_array(char *map_route);
 t_coord	ft_map_size(char **map);
 t_coord	ft_start_posit(char **map);
-int		ft_count_c(char **map);
+//int		ft_count_c(char **map);
+int		ft_count_elem(char **map, char elem, char elem2);
 //CHECKS
 int		ft_check_maps_rectangle(char **map);
 int		ft_check_map_leaks(char **map);
