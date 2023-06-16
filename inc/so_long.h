@@ -1,6 +1,14 @@
-//
-// Created by Jose Manuel Florido Pereña on 1/4/23.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jflorido <jflorido@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/16 17:11:00 by jflorido          #+#    #+#             */
+/*   Updated: 2023/06/16 17:11:07 by jflorido         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
@@ -8,32 +16,33 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
+# include <math.h>
 # include "../mlx/mlx.h"
 # include "../Get_Next_line/get_next_line.h"
 # include "../libft/libft.h"
 # include "../ft_printf/ft_printf.h"
 
-typedef struct	s_window {
+typedef struct s_window {
 	int		width_win;
 	int		height_win;
 	char	*title_win;
 }				t_window;
 
 //Struct to save a vector
-typedef struct	s_coord{
+typedef struct s_coord{
 	int		x;
 	int		y;
 }				t_coord;
 
 //Struct to store the general program data
-typedef struct	s_general {
+typedef struct s_general {
 	void	*mlx_ptr;
 	void	*win_ptr;
 	char	**map;
 }				t_gen_p;
 
 // Struct to save all the data related to the images
-typedef struct	s_image {
+typedef struct s_image {
 	void	*img;
 	int		width_im;
 	int		height_im;
@@ -49,7 +58,6 @@ typedef struct	s_image {
 char	**ft_map_2_array(char *map_route);
 t_coord	ft_map_size(char **map);
 t_coord	ft_start_posit(char **map);
-//int		ft_count_c(char **map);
 int		ft_count_elem(char **map, char elem, char elem2);
 //CHECKS
 int		ft_check_maps_rectangle(char **map);
@@ -75,7 +83,8 @@ void	ft_do_mov(t_coord prev_coord, t_coord next_coord, t_gen_p general);
 //EXIT
 void	ft_exiting(char **str);
 int		ft_close(t_gen_p *general);
-int		ft_check_map_value(t_coord prev_coord, t_coord next_coord, t_gen_p general);
+int		ft_check_map_value(t_coord prev_coord, t_coord next_coord,
+			t_gen_p general);
 void	ft_do_mov(t_coord prev_coord, t_coord next_coord, t_gen_p general);
 
 #endif //SO_LONG_H

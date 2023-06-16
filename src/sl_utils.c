@@ -24,7 +24,7 @@
  * #RETURN
  * 		- The program return the bidimensional array.
  */
-char	**ft_map_2_array(char *map_route) //TODO funcion con mas de 25 lineas
+char	**ft_map_2_array(char *map_route)
 {
 	int		fd;
 	char	**map;
@@ -37,22 +37,19 @@ char	**ft_map_2_array(char *map_route) //TODO funcion con mas de 25 lineas
 	fd = open(map_route, O_RDONLY);
 	if (fd == -1)
 		return (NULL);
-	//else
-	//{
-		while (get_next_line(fd))
-			lines++;
-		close(fd);
-		map = malloc (sizeof (char *) * (lines + 1));
-		fd = open(map_route, O_RDONLY);
-		while (i < lines)
-		{
-			map[i] = get_next_line(fd);
-			map[i][ft_strlen(map[i]) - 1] = '\0';
-			i++;
-		}
-		map[i] = NULL;
-		close(fd);
-	//}
+	while (get_next_line(fd))
+		lines++;
+	close(fd);
+	map = malloc (sizeof (char *) * (lines + 1));
+	fd = open(map_route, O_RDONLY);
+	while (i < lines)
+	{
+		map[i] = get_next_line(fd);
+		map[i][ft_strlen(map[i]) - 1] = '\0';
+		i++;
+	}
+	map[i] = NULL;
+	close(fd);
 	return (map);
 }
 
@@ -117,40 +114,18 @@ t_coord	ft_start_posit(char **map)
 }
 
 /*
- * #FT_COUNT_C
- * 		Get the count of c/C characters within the map
+ * #FT_COUNT_ELEM
+ * 		Counts how many given characters are in the map
  *
  * #PARAMETERS
  *		- char **map --> The map converted into a char **
+ *		- char elem --> Element 1 to be searched.
+ *		- char elem2 --> Element 2 to be searched.
  *
  * #RETURN
- * 		- count -> the count of the mentioned character.
+ * 		- int count --> number of elements found.
  */
-//int	ft_count_c(char **map)
-//{
-//	int	lines;
-//	int	cols;
-//	int	count;
-//
-//	lines = -1;
-//	count = 0;
-//	while (map && map[++lines])
-//	{
-//		cols = -1;
-//		while (map[lines][++cols])
-//		{
-//			if (map[lines][cols] == 'c' || map[lines][cols] == 'C')
-//				count++;
-//		}
-//	}
-//	return (count);
-//}
-
-/*
- * FT_COUNT_ELEM(char **map)
- */
-
-int ft_count_elem(char **map, char elem, char elem2)
+int	ft_count_elem(char **map, char elem, char elem2)
 {
 	int	lines;
 	int	cols;

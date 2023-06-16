@@ -55,8 +55,7 @@ int	ft_check_map_value(t_coord prev_coord, t_coord next_coord, t_gen_p general)
 		return (1);
 	}
 	else if ((map_value == 'e' || map_value == 'E')
-		//&& ft_count_c(general.map) == 0)
-			 && ft_count_elem(general.map, 'c', 'C') == 0)
+		&& ft_count_elem(general.map, 'c', 'C') == 0)
 		ft_close(&general);
 	return (0);
 }

@@ -71,7 +71,7 @@ void	ft_so_long(t_gen_p general_p)
 
 	general_p.mlx_ptr = mlx_init();
 	img.img = mlx_xpm_file_to_image (general_p.mlx_ptr,
-			"textures/grass_redim.xpm",&img.width_im,&img.height_im);
+			FREE_, &img.width_im, &img.height_im);
 	general_p.win_ptr = mlx_new_window (general_p.mlx_ptr,
 			ft_map_size (general_p.map).x * img.width_im,
 			ft_map_size (general_p.map).y * img.height_im, "WINNING THE POO");
