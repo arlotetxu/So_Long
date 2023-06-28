@@ -23,10 +23,6 @@ define HEADER
                                    __/ |
                                   |___/
 
-       _                                                      ___       ___
-  o  _|_  |   _   ._  o   _|   _      /     /\   ._  |    _    |    _    |       | |
-  |   |   |  (_)  |   |  (_|  (_)    /     /--\  |   |_  (_)   |   (/_   |   ><  |_|
- _|
 
 endef
 export HEADER
@@ -94,6 +90,9 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJF)
 # Crear directorio temporal para los obj
 $(OBJF):
 	@mkdir -p $(OBJ_DIR)
+
+normi:
+	norminette $(SRC_DIR) $(INC)
 
 # Cleanning files
 clean:

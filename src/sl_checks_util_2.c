@@ -29,7 +29,7 @@ char	**ft_dupli_map(char **map, t_coord size)
 	int		i;
 	int		j;
 
-	copy_map = malloc(sizeof(char *) * size.y + 1);
+	copy_map = malloc(sizeof(char *) * (size.y + 1));
 	if (copy_map == NULL)
 		return (NULL);
 	i = -1;
@@ -41,6 +41,7 @@ char	**ft_dupli_map(char **map, t_coord size)
 			copy_map[i][j] = map[i][j];
 		copy_map[i][size.x] = '\0';
 	}
+	copy_map[i] = NULL;
 	return (copy_map);
 }
 

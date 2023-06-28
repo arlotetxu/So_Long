@@ -68,6 +68,8 @@ t_coord	ft_map_size(char **map)
 	t_coord	map_size;
 	int		lines;
 
+	map_size.x = 0;
+	map_size.y = 0;
 	lines = 0;
 	while (map && map[lines] != NULL)
 		lines++;
