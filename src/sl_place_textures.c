@@ -35,7 +35,7 @@ void	ft_place_texture(t_gen_p general_p, char *texture, int x, int y)
 			&img_.width_im, &img_.height_im);
 	if (!img_.img)
 	{
-		ft_printf("Error.\nFile is corrupted.\n");
+		ft_printf("Error.\nTexture file is corrupted.\n");
 		ft_close(&general_p);
 	}
 	mlx_put_image_to_window(general_p.mlx_ptr, general_p.win_ptr,
