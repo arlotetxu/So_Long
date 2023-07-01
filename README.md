@@ -1,7 +1,6 @@
 # So_Long
 
-![PROJECT_NAME](https://github.com/leogaudin/42_project_badges/raw/main/badges/so_long.webp)
-
+![PROJECT_NAME](https://github.com/arlotetxu/42_Badges/blob/main/so_long.webp)
 
 
 Little 2D game designed to work with textures, sprites and some other basic game elements
